@@ -21,10 +21,10 @@ package org.ballerinalang.semver.checker.evaluator;
 import org.testng.annotations.Test;
 
 /**
- * Extended FunctionTests class for test each test case scenarios separately.
+ * Extended FunctionTest class for test each test case scenarios separately.
  * @since 2201.2.0
  */
-public class FunctionTests extends BaseFunctionTest {
+public class FunctionTest extends BaseFunctionTest {
 
     @Test
     public void testFunctionAnnotation() throws Exception {
