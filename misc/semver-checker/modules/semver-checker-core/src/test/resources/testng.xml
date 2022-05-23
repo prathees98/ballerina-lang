@@ -27,7 +27,7 @@ under the License.
             </run>
         </groups>
         <classes>
-            <class name="org.ballerinalang.semver.checker.evaluator.FunctionTest"/>
+            <class name="org.ballerinalang.semver.checker.evaluator.FunctionTests"/>
         </classes>
     </test>
 </suite>
