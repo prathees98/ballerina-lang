@@ -1,0 +1,7 @@
+[
+  {
+    "description": "Change made on attach point in a service declaration",
+    "oldCode": "service / on new http:Listener(8080){}",
+    "newCode": "service /demo on new http:Listener(8080){}"
+  }
+]
