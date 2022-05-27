@@ -1,0 +1,56 @@
+[
+  {
+    "description": "Add isolated qualifier for a  definition.",
+    "oldCode": "service on new http:Listener(8080){\n\t function hello(string name) {} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tisolated  function hello(string name){} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Remove isolated qualifier for a  definition.",
+    "oldCode": "service on new http:Listener(8080){\n\tisolated  function hello(string name) {} \n}",
+    "newCode": "service on new http:Listener(8080){\n\t function hello(string name) {} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Add transactional qualifier for a method definition.",
+    "oldCode": "service on new http:Listener(8080){\n\t function hello(string name) {} \n}",
+    "newCode": "service on new http:Listener(8080){\n\ttransactional  function hello(string name){} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Remove transactional qualifier for a method definition.",
+    "oldCode": "service on new http:Listener(8080){\n\ttransactional  function hello(string name) {} \n}",
+    "newCode": "service on new http:Listener(8080){\n\t function hello(string name) {} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Add public qualifier for a method  definition.",
+    "oldCode": "service on new http:Listener(8080){\n\t function hello(string name) {} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tpublic  function hello(string name){} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Remove public qualifier for a method definition.",
+    "oldCode": "service on new http:Listener(8080){\n\tpublic function hello(string name) {} \n}",
+    "newCode": "service on new http:Listener(8080){\n\t function hello(string name) {} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Add more than 1 qualifier for a  definition",
+    "oldCode": "service on new http:Listener(8080){\n\t function hello(string name) {} \n}",
+    "newCode": "service on new http:Listener(8080){\n\t public isolated transactional function hello(string name) {} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Remove more than 1 qualifier for a  definition.",
+    "oldCode": "service on new http:Listener(8080){\n\tpublic transactional  function hello(string name) {} \n}",
+    "newCode": "service on new http:Listener(8080){\n\t function hello(string name) {} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Modify qualifier for a  definition.",
+    "oldCode": "service on new http:Listener(8080){\n\tpublic  function hello(string name) {} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tisolated  function hello(string name) {} \n}",
+    "expectedOutput":""
+  }
+]

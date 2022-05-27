@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Modify a body of the method definition in a service declaration",
+    "oldCode": "service on new http:Listener(8080){\n\tresource function get hello(string name) returns string{\n\t\treturn “Hello” + name; \n} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tresource function get hello(string name) returns string{\n\t\treturn “Hello” ; \n} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Add body of the method definition in a service declaration",
+    "oldCode": "service on new http:Listener(8080){\n\tresource function get hello(string name) returns string{} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tresource function get hello(string name) returns string{\n\t\treturn “Hello” ; \n} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "remove body of the method definition in a service declaration",
+    "oldCode": "service on new http:Listener(8080){\n\tresource function get hello(string name) returns string{\n\t\treturn “Hello” + name; \n} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tresource function get hello(string name) returns string{} \n}",
+    "expectedOutput":""
+  }
+]

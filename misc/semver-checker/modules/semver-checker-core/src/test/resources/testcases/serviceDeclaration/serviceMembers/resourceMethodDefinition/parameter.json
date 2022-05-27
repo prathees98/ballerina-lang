@@ -1,0 +1,68 @@
+[
+  {
+    "description": "Change the type of parameter of a resource method definition in a service declaration",
+    "oldCode": "service on new http:Listener(8080){\n\tresource function get hello(string id){\n} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tresource function get hello(int  id) {\n} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Change the  parameter to readonly parameter of a resource method definition in a service declaration",
+    "oldCode": "service on new http:Listener(8080){\n\tresource function get hello(int id){\n} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tresource function get hello(readonly & int  id) {\n} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Remove parameter of a resource method definition in a service declaration",
+    "oldCode": "service on new http:Listener(8080){\n\tresource function get hello(string id){\n} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tresource function get hello() {\n} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Change the order of parameter in resource method definition in a service declaration",
+    "oldCode": "service on new http:Listener(8080){\n\tresource function get hello(int  id, int num){\n} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tresource function get hello(int num, int id) {\n} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Change the  parameter type default to required in resource method definition in a service declaration",
+    "oldCode": "service on new http:Listener(8080){\n\tresource function get hello(int  id = 7){\n} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tresource function get hello(int id) {\n} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Change the parameter required to default in resource method definition in a service declaration",
+    "oldCode": "service on new http:Listener(8080){\n\tresource function get hello(int  id){\n} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tresource function get hello(int id = 10) {\n} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Add new parameter in resource method definition in a service declaration",
+    "oldCode": "service on new http:Listener(8080){\n\tresource function get hello(int  id){\n} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tresource function get hello(int id, int num) {\n} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Change the default value of parameter in resource method definition in a service declaration",
+    "oldCode": "service on new http:Listener(8080){\n\tresource function get hello(int  id = 5{\n} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tresource function get hello(int id = 7) {\n} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Add parameter annotation to a method.",
+    "oldCode": "service on new http:Listener(8080){\n\tresource function get hello(string id){\n} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tresource function get hello(@tainted string  id) {\n} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Remove parameter annotation from a method.",
+    "oldCode": "service on new http:Listener(8080){\n\tresource function get hello(@tainted string id){\n} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tresource function get hello( string  id) {\n} \n}",
+    "expectedOutput":""
+  },
+  {
+    "description": "Modify parameter annotation in a method.",
+    "oldCode": "service on new http:Listener(8080){\n\tresource function get hello(@untainted string id){\n} \n}",
+    "newCode": "service on new http:Listener(8080){\n\tresource function get hello(@tainted string  id) {\n} \n}",
+    "expectedOutput":""
+  }
+]

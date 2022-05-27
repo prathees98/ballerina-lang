@@ -2,11 +2,13 @@
   {
     "description": "Remove an existing isolated qualifier in service declaration",
     "oldCode": "isolated service on new http:Listener(8080){}",
-    "newCode": "service on new   http:Listener(8080){}"
+    "newCode": "service on new http:Listener(8080){}",
+    "expectedOutput": {}
   },
   {
     "description": "Add a isolated keyword to an existing service declaration",
     "oldCode": "service on new http:Listener(8080){}",
-    "newCode": "isolated service on new http:Listener(8080){}"
+    "newCode": "isolated service on new http:Listener(8080){}",
+    "expectedOutput": {}
   }
 ]

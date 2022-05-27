@@ -1,7 +1,20 @@
 [
   {
-    "description": "Change made on attach point in a service declaration",
+    "description": "Add attach point in a service declaration",
+    "oldCode": "service on new http:Listener(8080){}",
+    "newCode": "service /demo on new http:Listener(8080){}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Modify attach point in a service declaration",
     "oldCode": "service / on new http:Listener(8080){}",
-    "newCode": "service /demo on new http:Listener(8080){}"
+    "newCode": "service /demo on new http:Listener(8080){}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove attach point in a service declaration",
+    "oldCode": "service /demo on new http:Listener(8080){}",
+    "newCode": "service on new http:Listener(8080){}",
+    "expectedOutput": {}
   }
 ]
