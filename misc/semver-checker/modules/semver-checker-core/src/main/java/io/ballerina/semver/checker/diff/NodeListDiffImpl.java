@@ -39,7 +39,7 @@ import static io.ballerina.semver.checker.util.DiffUtils.DIFF_ATTR_VERSION_IMPAC
 import static io.ballerina.semver.checker.util.DiffUtils.stringifyDiff;
 
 /**
- * Base implementation of changes in Ballerina syntax tree node lists.
+ * Base implementation for changes in Ballerina syntax tree node lists.
  *
  * @param <T> node type
  * @since 2201.2.0
@@ -190,7 +190,9 @@ public class NodeListDiffImpl<T extends Node> implements NodeListDiff<List<T>> {
         @Override
         public Optional<NodeListDiffImpl<?>> build() {
             if (!nodeListDiff.getChildDiffs().isEmpty()) {
-                nodeListDiff.computeVersionImpact();
+                if (nodeListDiff.getVersionImpact() == SemverImpact.UNKNOWN) {
+                    nodeListDiff.computeVersionImpact();
+                }
                 nodeListDiff.setType(DiffType.MODIFIED);
                 return Optional.of(nodeListDiff);
             } else if (nodeListDiff.getType() == DiffType.NEW || nodeListDiff.getType() == DiffType.REMOVED

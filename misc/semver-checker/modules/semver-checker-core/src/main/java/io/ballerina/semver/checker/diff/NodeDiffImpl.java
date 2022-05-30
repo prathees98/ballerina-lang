@@ -22,6 +22,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 import io.ballerina.compiler.syntax.tree.Node;
+import io.ballerina.compiler.syntax.tree.SyntaxKind;
 import io.ballerina.semver.checker.util.DiffUtils;
 
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ import static io.ballerina.semver.checker.util.DiffUtils.DIFF_ATTR_VERSION_IMPAC
 import static io.ballerina.semver.checker.util.DiffUtils.stringifyDiff;
 
 /**
- * Implementation of changes in Ballerina syntax tree nodes.
+ * Base implementation for changes in Ballerina syntax tree nodes.
  *
  * @param <T> node type
  * @since 2201.2.0
@@ -84,6 +85,11 @@ public class NodeDiffImpl<T extends Node> implements NodeDiff<T> {
     @Override
     public Optional<T> getOldNode() {
         return Optional.ofNullable(oldNode);
+    }
+
+    @Override
+    public SyntaxKind getNodeKind() {
+        return newNode != null ? newNode.kind() : oldNode.kind();
     }
 
     @Override
@@ -152,7 +158,7 @@ public class NodeDiffImpl<T extends Node> implements NodeDiff<T> {
             sb.append(stringifyDiff(this));
         } else {
             // Todo: Add the rest of module-level definition types
-            if (this instanceof FunctionDiff) {
+            if (this instanceof FunctionDiff || this instanceof ServiceDiff) {
                 sb.append(stringifyDiff(this));
             }
             childDiffs.forEach(diff -> sb.append(diff.getAsString()));
@@ -202,7 +208,9 @@ public class NodeDiffImpl<T extends Node> implements NodeDiff<T> {
         @Override
         public Optional<? extends NodeDiff<T>> build() {
             if (!nodeDiff.getChildDiffs().isEmpty()) {
-                nodeDiff.computeVersionImpact();
+                if (nodeDiff.getVersionImpact() == SemverImpact.UNKNOWN) {
+                    nodeDiff.computeVersionImpact();
+                }
                 nodeDiff.setType(DiffType.MODIFIED);
                 return Optional.of(nodeDiff);
             } else if (nodeDiff.getType() == DiffType.NEW || nodeDiff.getType() == DiffType.REMOVED

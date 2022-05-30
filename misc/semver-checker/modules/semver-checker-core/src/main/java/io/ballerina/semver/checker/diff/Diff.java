@@ -36,9 +36,9 @@ public interface Diff {
 
     void computeVersionImpact();
 
-    List<? extends Diff> getChildDiffs();
+    List<Diff> getChildDiffs();
 
-    List<? extends Diff> getChildDiffs(SemverImpact versionImpact);
+    List<Diff> getChildDiffs(SemverImpact versionImpact);
 
     String getAsString();
 
