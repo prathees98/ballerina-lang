@@ -1,32 +1,32 @@
 [
   {
     "description": "Remove public keyword for a object field",
-    "oldCode": "service on new http:Listener(8080){\npublic int x=5;\n\t}",
-    "newCode": "service on new http:Listener(8080){\n\tint x=5;\n\t}",
-    "expectedOutput":""
+    "oldCode": "service /demo on new http:Listener(8080){\npublic int x=5;\n\t}",
+    "newCode": "service /demo on new http:Listener(8080){\n\tint x=5;\n\t}",
+    "expectedOutput":{}
   },
   {
     "description": "Add public keyword for a object field",
-    "oldCode": "service on new http:Listener(8080){\nint x=5;\n\t}",
-    "newCode": "service on new http:Listener(8080){\n\tpublic int x=5;\n\t}",
-    "expectedOutput":""
+    "oldCode": "service /demo on new http:Listener(8080){\nint x=5;\n\t}",
+    "newCode": "service /demo on new http:Listener(8080){\n\tpublic int x=5;\n\t}",
+    "expectedOutput":{}
   },
   {
     "description": "Add Final keyword for a object field",
-    "oldCode": "service on new http:Listener(8080){\nint x=5;\n\t}",
-    "newCode": "service on new http:Listener(8080){\n\tfinal int x=5;\n\t}",
-    "expectedOutput":""
+    "oldCode": "service /demo on new http:Listener(8080){\nint x=5;\n\t}",
+    "newCode": "service /demo on new http:Listener(8080){\n\tfinal int x=5;\n\t}",
+    "expectedOutput":{}
   },
   {
     "description": "Add final and public keyword for a object field",
-    "oldCode": "service on new http:Listener(8080){\nint x=5;\n\t}",
-    "newCode": "service on new http:Listener(8080){\n\tpublic final int x=5;\n\t}",
-    "expectedOutput":""
+    "oldCode": "service /demo on new http:Listener(8080){\nint x=5;\n\t}",
+    "newCode": "service /demo on new http:Listener(8080){\n\tpublic final int x=5;\n\t}",
+    "expectedOutput":{}
   },
   {
     "description": "Remove Final keyword from a object field",
-    "oldCode": "service on new http:Listener(8080){\nfinal int x=5;\n\t}",
-    "newCode": "service on new http:Listener(8080){\n\tint x=5;\n\t}",
-    "expectedOutput":""
+    "oldCode": "service /demo on new http:Listener(8080){\nfinal int x=5;\n\t}",
+    "newCode": "service /demo on new http:Listener(8080){\n\tint x=5;\n\t}",
+    "expectedOutput":{}
   }
 ]

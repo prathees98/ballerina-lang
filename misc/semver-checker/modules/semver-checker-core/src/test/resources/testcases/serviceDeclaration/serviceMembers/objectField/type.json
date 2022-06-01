@@ -1,14 +1,14 @@
 [
   {
     "description": "Change object field type",
-    "oldCode": "service on new http:Listener(8080){\npublic int x=5;\n\t}",
-    "newCode": "service on new http:Listener(8080){\n\tpublic float x=5;\n\t}",
-    "expectedOutput":""
+    "oldCode": "service /demo on new http:Listener(8080){\npublic int x=5;\n\t}",
+    "newCode": "service /demo on new http:Listener(8080){\n\tpublic float x=5;\n\t}",
+    "expectedOutput":{}
   },
   {
     "description": "Change the object field type",
-    "oldCode": "service on new http:Listener(8080){\nint x = 2;\n\t}",
-    "newCode": "service on new http:Listener(8080){\n\tstring x = “2”;\n\t}",
-    "expectedOutput":""
+    "oldCode": "service /demo on new http:Listener(8080){\nint x = 2;\n\t}",
+    "newCode": "service /demo on new http:Listener(8080){\n\tstring x = “2”;\n\t}",
+    "expectedOutput":{}
   }
 ]
