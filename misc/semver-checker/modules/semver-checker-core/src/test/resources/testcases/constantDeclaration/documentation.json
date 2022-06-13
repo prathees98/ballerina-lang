@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Add documentation for constant declaration",
+    "oldCode": "public const int age=10;",
+    "newCode": "#Documentation\npublic const int age=10;",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove documentation for variable declaration",
+    "oldCode": "#Documentation\npublic const int age=10;",
+    "newCode": "public const int age=10;",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Modify documentation for variable declaration",
+    "oldCode": "#int declaration\npublic const int age=10;",
+    "newCode": "#Documentation\npublic const int age=10;",
+    "expectedOutput": {}
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Modify the documentation in module type definition",
+    "oldCode": "#Description\n#\n# + x - field Description\n# + y - field Description\ntype Coord record{\nint x;\nint y;\n };",
+    "newCode": "#Description\n#\n# + x - int\n# + y - int\ntype Coord record{\nint x;\nint y;\n };",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add documentation to module type definition",
+    "oldCode": "type Coord record{\nint x;\nint y;\n };",
+    "newCode": "#Description\n#\n# + x - int\n# + y - int\ntype Coord record{\nint x;\nint y;\n };",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove documentation from module type definition",
+    "oldCode": "#Description\n#\n# + x - field Description\n# + y - field Description\ntype Coord record{\nint x;\nint y;\n };",
+    "newCode": "type Coord record{\nint x;\nint y;\n };",
+    "expectedOutput": {}
+  }
+]

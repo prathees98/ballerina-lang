@@ -51,11 +51,13 @@ public class TestUtils {
             String oldCode = testDataObject.get(JSON_ATTR_OLD_CODE).getAsString();
             String newCode = testDataObject.get(JSON_ATTR_NEW_CODE).getAsString();
             JsonObject expectedOutput = (JsonObject) testDataObject.get(JSON_ATTR_EXPECTED_RESULTS);
+            String description = testDataObject.get("description").getAsString();
+            System.out.println(description);
             BuildProject oldProject = ProjectUtils.createProject(oldCode);
             BuildProject currentProject = ProjectUtils.createProject(newCode);
             Package oldPackage = oldProject.currentPackage();
             Package currentPackage = currentProject.currentPackage();
-            assertPackageDiff(oldPackage, currentPackage, expectedOutput);
+            assertPackageDiff(oldPackage, currentPackage, expectedOutput ,  description);
         } catch (Exception e) {
             throw new SemverTestException("failed to load Ballerina package using test data");
         }
@@ -68,13 +70,12 @@ public class TestUtils {
      * @param currentPackage package instance of current code
      * @param expectedOutput Expected json output for the test case
      */
-    public static void assertPackageDiff(Package oldPackage, Package currentPackage, JsonObject expectedOutput) {
+    public static void assertPackageDiff(Package oldPackage, Package currentPackage, JsonObject expectedOutput, String description) {
         PackageComparator packageComparator = new PackageComparator(currentPackage, oldPackage);
         Optional<PackageDiff> packageDiff = packageComparator.computeDiff();
         if (expectedOutput.equals(new JsonObject())) {
-            // disabled test cases
         } else {
-            packageDiff.ifPresent(diff -> Assert.assertEquals(diff.getAsJson(), expectedOutput));
+           packageDiff.ifPresent(diff -> Assert.assertEquals(diff.getAsJson(), expectedOutput));
         }
     }
 }

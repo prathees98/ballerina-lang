@@ -1,0 +1,32 @@
+[
+  {
+    "description": "Change the type of a module variable",
+    "oldCode": "public int id = 102;",
+    "newCode": "public float id = 102;",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change the type of a module variable int to string",
+    "oldCode": "public int id ;",
+    "newCode": "public string id ;",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change the type of a module variable int to any",
+    "oldCode": "public int id ;",
+    "newCode": "public any id ;",
+    "expectedOutput": {}
+  },
+  {
+      "description": "Change the type of a module variable any data to any",
+      "oldCode": "public anydata id ;",
+      "newCode": "public any id ;",
+      "expectedOutput": {}
+  },
+  {
+      "description": "Change the int type ",
+      "oldCode": "int v = 2;",
+      "newCode": "int? v = 2;",
+      "expectedOutput": {}
+  }
+]

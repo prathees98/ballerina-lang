@@ -1,0 +1,14 @@
+[
+  {
+    "description": "Remove the qualifier in a module variable declaration",
+    "oldCode": "public int age = 10;",
+    "newCode": "int age = 10;",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add  qualifier to a module variable declaration",
+    "oldCode": "int age = 10;",
+    "newCode": "public int age = 10;",
+    "expectedOutput": {}
+  }
+]

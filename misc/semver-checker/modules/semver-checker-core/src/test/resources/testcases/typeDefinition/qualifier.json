@@ -1,0 +1,14 @@
+[
+  {
+    "description": "Remove the public keyword from a type definition",
+    "oldCode": "public type MapArray map<string>[];",
+    "newCode": "type MapArray map<string>[];",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add public key word to a type definition",
+    "oldCode": "type MapArray map<string>[];",
+    "newCode": "public type MapArray map<string>[];",
+    "expectedOutput": {}
+  }
+]

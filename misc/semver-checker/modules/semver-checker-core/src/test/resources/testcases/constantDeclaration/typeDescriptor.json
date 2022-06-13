@@ -1,0 +1,14 @@
+[
+  {
+    "description": "Change the type of a module constant",
+    "oldCode": "public const int id = 102;",
+    "newCode": "public const float id = 102;",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change the type of a module constant int to string",
+    "oldCode": "public const int id = 102;",
+    "newCode": "public const string id = “102”;",
+    "expectedOutput": {}
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "description": "put value for uninitialized variable",
+    "oldCode": "public int num;",
+    "newCode": "public int num=1;",
+    "expectedOutput": {}
+  },
+  {
+    "description": "remove value for initialized variable",
+    "oldCode": "public int num=5;",
+    "newCode": "public int num;",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change the value.",
+    "oldCode": "public int id = 10;",
+    "newCode": "public int id = 5;",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change the expression but doesn't change the value (Non affecting change)",
+    "oldCode": "public int id = 10;",
+    "newCode": "public int id = 5+5;",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Non affecting change in expression",
+    "oldCode": "public boolean alive = false;",
+    "newCode": "public boolean alive = !true;",
+    "expectedOutput": {}
+  }
+]
