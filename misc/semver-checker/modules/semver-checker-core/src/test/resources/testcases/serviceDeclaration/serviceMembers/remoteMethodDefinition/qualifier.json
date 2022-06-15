@@ -3,11 +3,40 @@
     "description": "Add isolated qualifier for a remote definition.",
     "oldCode": "service /demo on new http:Listener(8080){\n\tremote function hello(string name) {} \n}",
     "newCode": "service /demo on new http:Listener(8080){\n\tisolated remote function hello(string name){} \n}",
-    "expectedOutput":{"kind":"package","type":"modified","versionImpact":"patch","childDiffs":[{
-      "kind":"module","type":"modified","versionImpact":"patch","childDiffs":[{
-        "kind":"service","type":"modified","versionImpact":"patch","childDiffs":[{
-          "kind":"remote function","type":"modified","versionImpact":"patch","childDiffs":[{
-            "kind":"unknown","type":"new","versionImpact":"ambiguous","message":"'isolated' qualifier is added"}]}]}]}]}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "ambiguous",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "ambiguous",
+          "childDiffs": [
+            {
+              "kind": "service",
+              "type": "modified",
+              "versionImpact": "ambiguous",
+              "childDiffs": [
+                {
+                  "kind": "remote function",
+                  "type": "modified",
+                  "versionImpact": "ambiguous",
+                  "childDiffs": [
+                    {
+                      "kind": "unknown",
+                      "type": "new",
+                      "versionImpact": "ambiguous",
+                      "message": "'isolated' qualifier is added"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Remove isolated qualifier for a remote definition.",
@@ -16,22 +45,22 @@
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
-      "versionImpact": "patch",
+      "versionImpact": "ambiguous",
       "childDiffs": [
         {
           "kind": "module",
           "type": "modified",
-          "versionImpact": "patch",
+          "versionImpact": "ambiguous",
           "childDiffs": [
             {
               "kind": "service",
               "type": "modified",
-              "versionImpact": "patch",
+              "versionImpact": "ambiguous",
               "childDiffs": [
                 {
                   "kind": "remote function",
                   "type": "modified",
-                  "versionImpact": "patch",
+                  "versionImpact": "ambiguous",
                   "childDiffs": [
                     {
                       "kind": "unknown",
@@ -55,22 +84,22 @@
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
-      "versionImpact": "patch",
+      "versionImpact": "ambiguous",
       "childDiffs": [
         {
           "kind": "module",
           "type": "modified",
-          "versionImpact": "patch",
+          "versionImpact": "ambiguous",
           "childDiffs": [
             {
               "kind": "service",
               "type": "modified",
-              "versionImpact": "patch",
+              "versionImpact": "ambiguous",
               "childDiffs": [
                 {
                   "kind": "remote function",
                   "type": "modified",
-                  "versionImpact": "patch",
+                  "versionImpact": "ambiguous",
                   "childDiffs": [
                     {
                       "kind": "unknown",
@@ -94,22 +123,22 @@
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
-      "versionImpact": "patch",
+      "versionImpact": "ambiguous",
       "childDiffs": [
         {
           "kind": "module",
           "type": "modified",
-          "versionImpact": "patch",
+          "versionImpact": "ambiguous",
           "childDiffs": [
             {
               "kind": "service",
               "type": "modified",
-              "versionImpact": "patch",
+              "versionImpact": "ambiguous",
               "childDiffs": [
                 {
                   "kind": "remote function",
                   "type": "modified",
-                  "versionImpact": "patch",
+                  "versionImpact": "ambiguous",
                   "childDiffs": [
                     {
                       "kind": "unknown",
@@ -133,22 +162,22 @@
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
-      "versionImpact": "patch",
+      "versionImpact": "ambiguous",
       "childDiffs": [
         {
           "kind": "module",
           "type": "modified",
-          "versionImpact": "patch",
+          "versionImpact": "ambiguous",
           "childDiffs": [
             {
               "kind": "service",
               "type": "modified",
-              "versionImpact": "patch",
+              "versionImpact": "ambiguous",
               "childDiffs": [
                 {
                   "kind": "remote function",
                   "type": "modified",
-                  "versionImpact": "patch",
+                  "versionImpact": "ambiguous",
                   "childDiffs": [
                     {
                       "kind": "unknown",
@@ -178,22 +207,22 @@
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
-      "versionImpact": "patch",
+      "versionImpact": "ambiguous",
       "childDiffs": [
         {
           "kind": "module",
           "type": "modified",
-          "versionImpact": "patch",
+          "versionImpact": "ambiguous",
           "childDiffs": [
             {
               "kind": "service",
               "type": "modified",
-              "versionImpact": "patch",
+              "versionImpact": "ambiguous",
               "childDiffs": [
                 {
                   "kind": "remote function",
                   "type": "modified",
-                  "versionImpact": "patch",
+                  "versionImpact": "ambiguous",
                   "childDiffs": [
                     {
                       "kind": "unknown",
@@ -223,22 +252,22 @@
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
-      "versionImpact": "patch",
+      "versionImpact": "ambiguous",
       "childDiffs": [
         {
           "kind": "module",
           "type": "modified",
-          "versionImpact": "patch",
+          "versionImpact": "ambiguous",
           "childDiffs": [
             {
               "kind": "service",
               "type": "modified",
-              "versionImpact": "patch",
+              "versionImpact": "ambiguous",
               "childDiffs": [
                 {
                   "kind": "remote function",
                   "type": "modified",
-                  "versionImpact": "patch",
+                  "versionImpact": "ambiguous",
                   "childDiffs": [
                     {
                       "kind": "unknown",

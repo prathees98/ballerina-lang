@@ -78,6 +78,7 @@ public class TestUtils {
             System.out.println(description);
             System.out.println(packageDiff.get().getAsJson());
         } else {
+            System.out.println(packageDiff.get().getAsJson());
            packageDiff.ifPresent(diff -> Assert.assertEquals(diff.getAsJson(), expectedOutput));
 
         }

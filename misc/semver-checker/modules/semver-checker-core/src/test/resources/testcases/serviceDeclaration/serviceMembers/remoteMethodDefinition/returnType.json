@@ -6,22 +6,22 @@
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
-      "versionImpact": "patch",
+      "versionImpact": "ambiguous",
       "childDiffs": [
         {
           "kind": "module",
           "type": "modified",
-          "versionImpact": "patch",
+          "versionImpact": "ambiguous",
           "childDiffs": [
             {
               "kind": "service",
               "type": "modified",
-              "versionImpact": "patch",
+              "versionImpact": "ambiguous",
               "childDiffs": [
                 {
                   "kind": "remote function",
                   "type": "modified",
-                  "versionImpact": "patch",
+                  "versionImpact": "ambiguous",
                   "childDiffs": [
                     {
                       "kind": "unknown",
@@ -45,22 +45,22 @@
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
-      "versionImpact": "patch",
+      "versionImpact": "major",
       "childDiffs": [
         {
           "kind": "module",
           "type": "modified",
-          "versionImpact": "patch",
+          "versionImpact": "major",
           "childDiffs": [
             {
               "kind": "service",
               "type": "modified",
-              "versionImpact": "patch",
+              "versionImpact": "major",
               "childDiffs": [
                 {
                   "kind": "remote function",
                   "type": "modified",
-                  "versionImpact": "patch",
+                  "versionImpact": "major",
                   "childDiffs": [
                     {
                       "kind": "unknown",
@@ -84,22 +84,22 @@
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
-      "versionImpact": "patch",
+      "versionImpact": "major",
       "childDiffs": [
         {
           "kind": "module",
           "type": "modified",
-          "versionImpact": "patch",
+          "versionImpact": "major",
           "childDiffs": [
             {
               "kind": "service",
               "type": "modified",
-              "versionImpact": "patch",
+              "versionImpact": "major",
               "childDiffs": [
                 {
                   "kind": "remote function",
                   "type": "modified",
-                  "versionImpact": "patch",
+                  "versionImpact": "major",
                   "childDiffs": [
                     {
                       "kind": "unknown",
