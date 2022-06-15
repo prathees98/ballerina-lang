@@ -3,13 +3,59 @@
     "description": "Change the type of a module variable",
     "oldCode": "public int id = 102;",
     "newCode": "public float id = 102;",
-    "expectedOutput": {}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "major",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "major",
+          "childDiffs": [
+            {
+              "kind": "module variable",
+              "type": "new",
+              "versionImpact": "minor"
+            },
+            {
+              "kind": "module variable",
+              "type": "removed",
+              "versionImpact": "major"
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Change the type of a module variable int to string",
     "oldCode": "public int id ;",
     "newCode": "public string id ;",
-    "expectedOutput": {}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "major",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "major",
+          "childDiffs": [
+            {
+              "kind": "module variable",
+              "type": "new",
+              "versionImpact": "minor"
+            },
+            {
+              "kind": "module variable",
+              "type": "removed",
+              "versionImpact": "major"
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Change the type of a module variable int to any",

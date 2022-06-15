@@ -101,7 +101,7 @@ public class VariableComparatorTest {
             case "testVariableQualifier":
                 filePath = VARIABLE_QUALIFIER_TESTCASE;
                 break;
-            case "testCVariableTypeDescriptor":
+            case "testVariableTypeDescriptor":
                 filePath = VARIABLE_TYPE_DESCRIPTOR_TESTCASE;
                 break;
             case "testAdvanceVariable":

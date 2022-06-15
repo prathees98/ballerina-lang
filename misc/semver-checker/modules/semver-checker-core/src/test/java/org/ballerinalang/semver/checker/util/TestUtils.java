@@ -24,9 +24,11 @@ import io.ballerina.projects.Package;
 import io.ballerina.projects.directory.BuildProject;
 import io.ballerina.semver.checker.comparator.PackageComparator;
 import io.ballerina.semver.checker.diff.PackageDiff;
+import io.ballerina.tools.diagnostics.Diagnostic;
 import org.ballerinalang.semver.checker.exception.SemverTestException;
 import org.testng.Assert;
 
+import java.util.Collection;
 import java.util.Optional;
 
 /**
@@ -57,7 +59,9 @@ public class TestUtils {
             BuildProject currentProject = ProjectUtils.createProject(newCode);
             Package oldPackage = oldProject.currentPackage();
             Package currentPackage = currentProject.currentPackage();
-            assertPackageDiff(oldPackage, currentPackage, expectedOutput ,  description);
+            /*Collection<Diagnostic> currentErrors = currentPackage.getCompilation().diagnosticResult().errors();
+            Collection<Diagnostic> oldErrors = oldPackage.getCompilation().diagnosticResult().errors();*/
+            assertPackageDiff(oldPackage, currentPackage, expectedOutput, description);
         } catch (Exception e) {
             throw new SemverTestException("failed to load Ballerina package using test data");
         }

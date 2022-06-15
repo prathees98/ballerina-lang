@@ -3,13 +3,59 @@
     "description": "Change the constant value",
     "oldCode": "public const int id = 10;",
     "newCode": "public const int id = 11;",
-    "expectedOutput": {}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "ambiguous",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "ambiguous",
+          "childDiffs": [
+            {
+              "childDiffs": [
+                {
+                  "kind": "unknown",
+                  "type": "modified",
+                  "versionImpact": "ambiguous",
+                  "message": "module variable initializer is modified"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Change the expression of a constant but doesn't change the value (Non affecting change)",
     "oldCode": "public const int id = 10;",
     "newCode": "public const int id = 5+5;",
-    "expectedOutput": {}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "ambiguous",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "ambiguous",
+          "childDiffs": [
+            {
+              "childDiffs": [
+                {
+                  "kind": "unknown",
+                  "type": "modified",
+                  "versionImpact": "ambiguous",
+                  "message": "module variable initializer is modified"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Non affecting change in expression",

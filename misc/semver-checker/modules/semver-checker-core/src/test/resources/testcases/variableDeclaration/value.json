@@ -3,30 +3,145 @@
     "description": "put value for uninitialized variable",
     "oldCode": "public int num;",
     "newCode": "public int num=1;",
-    "expectedOutput": {}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "ambiguous",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "ambiguous",
+          "childDiffs": [
+            {
+              "childDiffs": [
+                {
+                  "kind": "unknown",
+                  "type": "new",
+                  "versionImpact": "ambiguous",
+                  "message": "a new module variable initializer is added"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "remove value for initialized variable",
     "oldCode": "public int num=5;",
     "newCode": "public int num;",
-    "expectedOutput": {}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "ambiguous",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "ambiguous",
+          "childDiffs": [
+            {
+              "childDiffs": [
+                {
+                  "kind": "unknown",
+                  "type": "removed",
+                  "versionImpact": "ambiguous",
+                  "message": "an existing module variable initializer is removed"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Change the value.",
     "oldCode": "public int id = 10;",
     "newCode": "public int id = 5;",
-    "expectedOutput": {}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "ambiguous",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "ambiguous",
+          "childDiffs": [
+            {
+              "childDiffs": [
+                {
+                  "kind": "unknown",
+                  "type": "modified",
+                  "versionImpact": "ambiguous",
+                  "message": "module variable initializer is modified"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Change the expression but doesn't change the value (Non affecting change)",
     "oldCode": "public int id = 10;",
     "newCode": "public int id = 5+5;",
-    "expectedOutput": {}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "ambiguous",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "ambiguous",
+          "childDiffs": [
+            {
+              "childDiffs": [
+                {
+                  "kind": "unknown",
+                  "type": "modified",
+                  "versionImpact": "ambiguous",
+                  "message": "module variable initializer is modified"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Non affecting change in expression",
     "oldCode": "public boolean alive = false;",
     "newCode": "public boolean alive = !true;",
-    "expectedOutput": {}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "ambiguous",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "ambiguous",
+          "childDiffs": [
+            {
+              "childDiffs": [
+                {
+                  "kind": "unknown",
+                  "type": "modified",
+                  "versionImpact": "ambiguous",
+                  "message": "module variable initializer is modified"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 ]
