@@ -3,18 +3,108 @@
     "description": "Add Documentation to the object field",
     "oldCode": "service /demo on new http:Listener(8080){\nint x=5;\n\t}",
     "newCode": "service /demo on new http:Listener(8080){\n\t#Documentation\n\tint x=5;\n\t}",
-    "expectedOutput": {}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "patch",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "patch",
+          "childDiffs": [
+            {
+              "kind": "service",
+              "type": "modified",
+              "versionImpact": "patch",
+              "childDiffs": [
+                {
+                  "childDiffs": [
+                    {
+                      "kind": "unknown",
+                      "type": "new",
+                      "versionImpact": "patch",
+                      "message": "documentation is added"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Remove Documentation from the object field",
     "oldCode": "service /demo on new http:Listener(8080){\n#Documentation\nint x=5;\n\t}",
     "newCode": "service /demo on new http:Listener(8080){\n\tint x=5;\n\t}",
-    "expectedOutput":{}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "patch",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "patch",
+          "childDiffs": [
+            {
+              "kind": "service",
+              "type": "modified",
+              "versionImpact": "patch",
+              "childDiffs": [
+                {
+                  "childDiffs": [
+                    {
+                      "kind": "unknown",
+                      "type": "removed",
+                      "versionImpact": "patch",
+                      "message": "documentation is removed"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Modify Documentation from the object field",
     "oldCode": "service /demo on new http:Listener(8080){\n#Documentation\nint x=5;\n\t}",
     "newCode": "service /demo on new http:Listener(8080){\n\t#declaration of x.\n\tint x=5;\n\t}",
-    "expectedOutput":{}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "patch",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "patch",
+          "childDiffs": [
+            {
+              "kind": "service",
+              "type": "modified",
+              "versionImpact": "patch",
+              "childDiffs": [
+                {
+                  "childDiffs": [
+                    {
+                      "kind": "unknown",
+                      "type": "modified",
+                      "versionImpact": "patch",
+                      "message": "documentation is modified"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 ]
