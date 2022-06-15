@@ -45,7 +45,6 @@ public class VariableComparatorTest {
     private static final String VARIABLE_IDENTIFIER_TESTCASE = VARIABLE_TEST_DATA_ROOT + "identifier.json";
     private static final String VARIABLE_QUALIFIER_TESTCASE = VARIABLE_TEST_DATA_ROOT + "qualifier.json";
     private static final String VARIABLE_TYPE_DESCRIPTOR_TESTCASE = VARIABLE_TEST_DATA_ROOT + "typeDescriptor.json";
-    private static final String VARIABLE_MODULE_INIT_VAR_QUALIFIER_TESTCASE = VARIABLE_TEST_DATA_ROOT + "moduleInitVarQualifier.json";
     private static final String ADVANCE_VARIABLE_TESTCASE = VARIABLE_TEST_DATA_ROOT + "advanceVariable.json";
 
     @Test(dataProvider = "variableTestDataProvider")
@@ -70,11 +69,6 @@ public class VariableComparatorTest {
 
     @Test(dataProvider = "variableTestDataProvider")
     public void testVariableQualifier(JsonElement testData) throws Exception {
-        executeTestData(testData);
-    }
-
-    @Test(dataProvider = "variableTestDataProvider")
-    public void testVariableModuleInitVarQualifier(JsonElement testData) throws Exception {
         executeTestData(testData);
     }
 
@@ -106,9 +100,6 @@ public class VariableComparatorTest {
                 break;
             case "testVariableQualifier":
                 filePath = VARIABLE_QUALIFIER_TESTCASE;
-                break;
-            case "testVariableModuleInitVarQualifier":
-                filePath = VARIABLE_MODULE_INIT_VAR_QUALIFIER_TESTCASE;
                 break;
             case "testCVariableTypeDescriptor":
                 filePath = VARIABLE_TYPE_DESCRIPTOR_TESTCASE;

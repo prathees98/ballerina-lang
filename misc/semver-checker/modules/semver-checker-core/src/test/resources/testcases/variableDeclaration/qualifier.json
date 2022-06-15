@@ -10,5 +10,35 @@
     "oldCode": "int age = 10;",
     "newCode": "public int age = 10;",
     "expectedOutput": {}
+  },
+  {
+    "description": "Remove final keyword in module variable declaration",
+    "oldCode": "public final int age = 10;",
+    "newCode": "public int age = 10;",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add final keyword in module variable declaration",
+    "oldCode": "public int age = 10;",
+    "newCode": "public final int age = 10;",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove configurable keyword in module variable declaration",
+    "oldCode": "public configurable int age = 10;",
+    "newCode": "public int age = 10;",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add configurable keyword in module variable declaration",
+    "oldCode": "public int age = 10;",
+    "newCode": "public configurable int age = 10;",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Modify module-init-var-qualifier in module variable declaration",
+    "oldCode": "public final int age = 10;",
+    "newCode": "public configurable int age = 10;",
+    "expectedOutput": {}
   }
 ]

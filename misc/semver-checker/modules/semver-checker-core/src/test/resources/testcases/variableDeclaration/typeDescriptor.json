@@ -28,5 +28,17 @@
       "oldCode": "int v = 2;",
       "newCode": "int? v = 2;",
       "expectedOutput": {}
+  },
+  {
+    "description": "Change a particular type to union type",
+    "oldCode": "int x = 1;",
+    "newCode": "int|float x = 1;",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change a union type to particular type",
+    "oldCode": "string|decimal x = “1”;",
+    "newCode": "string x = “1”;",
+    "expectedOutput": {}
   }
 ]
