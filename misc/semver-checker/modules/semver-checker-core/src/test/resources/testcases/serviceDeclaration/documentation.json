@@ -3,24 +3,96 @@
     "description": "Add documentation in a module service declaration",
     "oldCode": "service /demo on new http:Listener(8080){}",
     "newCode": "# Service on port 8080\nservice /demo on new http:Listener(8080){}",
-    "expectedOutput": {"kind":"package","type":"modified","versionImpact":"patch","childDiffs":[
-      {"kind":"module","type":"modified","versionImpact":"patch","childDiffs":[{"childDiffs":[
-        {"kind":"unknown","type":"new","versionImpact":"patch","message":"documentation is added"}]}]}]}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "patch",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "patch",
+          "childDiffs": [
+            {
+              "kind": "service",
+              "type": "modified",
+              "versionImpact": "patch",
+              "childDiffs": [
+                {
+                  "kind": "unknown",
+                  "type": "new",
+                  "versionImpact": "patch",
+                  "message": "documentation is added"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Remove the documentation in a module service declaration",
     "oldCode": "# Service on port 8080\nservice /demo on new http:Listener(8080){}",
     "newCode": "service /demo on new http:Listener(8080){}",
-    "expectedOutput": {"kind":"package","type":"modified","versionImpact":"patch","childDiffs":[
-      {"kind":"module","type":"modified","versionImpact":"patch","childDiffs":[{"childDiffs":[
-        {"kind":"unknown","type":"removed","versionImpact":"patch","message":"documentation is removed"}]}]}]}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "patch",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "patch",
+          "childDiffs": [
+            {
+              "kind": "service",
+              "type": "modified",
+              "versionImpact": "patch",
+              "childDiffs": [
+                {
+                  "kind": "unknown",
+                  "type": "removed",
+                  "versionImpact": "patch",
+                  "message": "documentation is removed"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Modify the documentation in a module service declaration",
     "oldCode": "# Description\nservice /demo on new http:Listener(8080){}",
     "newCode": "# Service on port 8080\nservice /demo on new http:Listener(8080){}",
-    "expectedOutput": {"kind":"package","type":"modified","versionImpact":"patch","childDiffs":[
-      {"kind":"module","type":"modified","versionImpact":"patch","childDiffs":[{"childDiffs":[
-        {"kind":"unknown","type":"modified","versionImpact":"patch","message":"documentation is modified"}]}]}]}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "patch",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "patch",
+          "childDiffs": [
+            {
+              "kind": "service",
+              "type": "modified",
+              "versionImpact": "patch",
+              "childDiffs": [
+                {
+                  "kind": "unknown",
+                  "type": "modified",
+                  "versionImpact": "patch",
+                  "message": "documentation is modified"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 ]

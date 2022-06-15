@@ -3,28 +3,118 @@
     "description": "Change the type of return type in a method",
     "oldCode": "service /demo on new http:Listener(8080){\n\t function hello(string name) returns string {} \n}",
     "newCode": "service /demo on new http:Listener(8080){\n\t function hello(string name) returns int {} \n}",
-    "expectedOutput":{"kind":"package","type":"modified","versionImpact":"patch","childDiffs":[
-      {"kind":"module","type":"modified","versionImpact":"patch","childDiffs":[{"childDiffs":[
-        {"kind":"function","type":"modified","versionImpact":"patch","childDiffs":[
-          {"kind":"unknown","type":"modified","versionImpact":"ambiguous","message":"return type is changed from 'string ' to 'int '"}]}]}]}]}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "patch",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "patch",
+          "childDiffs": [
+            {
+              "kind": "service",
+              "type": "modified",
+              "versionImpact": "patch",
+              "childDiffs": [
+                {
+                  "kind": "function",
+                  "type": "modified",
+                  "versionImpact": "patch",
+                  "childDiffs": [
+                    {
+                      "kind": "unknown",
+                      "type": "modified",
+                      "versionImpact": "ambiguous",
+                      "message": "return type is changed from 'string ' to 'int '"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Remove return and make it as a non return method",
     "oldCode": "service /demo on new http:Listener(8080){\n\t function hello(string name) returns string {} \n}",
     "newCode": "service /demo on new http:Listener(8080){\n\t function hello(string name) {} \n}",
-    "expectedOutput":{"kind":"package","type":"modified","versionImpact":"patch","childDiffs":[
-      {"kind":"module","type":"modified","versionImpact":"patch","childDiffs":[{"childDiffs":[
-        {"kind":"function","type":"modified","versionImpact":"patch","childDiffs":[
-          {"kind":"unknown","type":"removed","versionImpact":"major","message":"return type is removed"}]}]}]}]}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "patch",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "patch",
+          "childDiffs": [
+            {
+              "kind": "service",
+              "type": "modified",
+              "versionImpact": "patch",
+              "childDiffs": [
+                {
+                  "kind": "function",
+                  "type": "modified",
+                  "versionImpact": "patch",
+                  "childDiffs": [
+                    {
+                      "kind": "unknown",
+                      "type": "removed",
+                      "versionImpact": "major",
+                      "message": "return type is removed"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Change a method as a return method",
     "oldCode": "service /demo on new http:Listener(8080){\n\t function hello(string name) {} \n}",
     "newCode": "service /demo on new http:Listener(8080){\n\t function hello(string name) returns int {} \n}",
-    "expectedOutput":{"kind":"package","type":"modified","versionImpact":"patch","childDiffs":[
-      {"kind":"module","type":"modified","versionImpact":"patch","childDiffs":[{"childDiffs":[
-        {"kind":"function","type":"modified","versionImpact":"patch","childDiffs":[
-          {"kind":"unknown","type":"new","versionImpact":"major","message":"return type is added"}]}]}]}]}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "patch",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "patch",
+          "childDiffs": [
+            {
+              "kind": "service",
+              "type": "modified",
+              "versionImpact": "patch",
+              "childDiffs": [
+                {
+                  "kind": "function",
+                  "type": "modified",
+                  "versionImpact": "patch",
+                  "childDiffs": [
+                    {
+                      "kind": "unknown",
+                      "type": "new",
+                      "versionImpact": "major",
+                      "message": "return type is added"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Add return type annotation to a method.",

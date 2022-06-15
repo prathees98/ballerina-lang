@@ -3,27 +3,33 @@
     "description": "Add documentation to a method",
     "oldCode": "service /demo on new http:Listener(8080){\n\tremote function hello(string name) {} \n}",
     "newCode": "service /demo on new http:Listener(8080){\n\t#Method for get string\n\tremote function hello(string name) {} \n}",
-    "expectedOutput":{"kind":"package","type":"modified","versionImpact":"patch","childDiffs":[
-      {"kind":"module","type":"modified","versionImpact":"patch","childDiffs":[{"childDiffs":[
-        {"kind":"remote function","type":"modified","versionImpact":"patch","childDiffs":[
-          {"kind":"unknown","type":"new","versionImpact":"patch","message":"documentation is added"}]}]}]}]}
+    "expectedOutput":{
+      "kind":"package","type":"modified","versionImpact":"patch","childDiffs":[{
+        "kind":"module","type":"modified","versionImpact":"patch","childDiffs":[{
+          "kind":"service","type":"modified","versionImpact":"patch","childDiffs":[{
+            "kind":"remote function","type":"modified","versionImpact":"patch","childDiffs":[{
+              "kind":"unknown","type":"new","versionImpact":"patch","message":"documentation is added"}]}]}]}]}
   },
   {
     "description": "Remove documentation from a method",
     "oldCode": "service /demo on new http:Listener(8080){\n#Method for get string\n\tremote function hello(string name) {} \n}",
     "newCode": "service /demo on new http:Listener(8080){\n\tremote function hello(string name) {} \n}",
-    "expectedOutput":{"kind":"package","type":"modified","versionImpact":"patch","childDiffs":[
-      {"kind":"module","type":"modified","versionImpact":"patch","childDiffs":[{"childDiffs":[
-        {"kind":"remote function","type":"modified","versionImpact":"patch","childDiffs":[
-          {"kind":"unknown","type":"removed","versionImpact":"patch","message":"documentation is removed"}]}]}]}]}
+    "expectedOutput":{
+      "kind":"package","type":"modified","versionImpact":"patch","childDiffs":[{
+        "kind":"module","type":"modified","versionImpact":"patch","childDiffs":[{
+          "kind":"service","type":"modified","versionImpact":"patch","childDiffs":[{
+            "kind":"remote function","type":"modified","versionImpact":"patch","childDiffs":[{
+              "kind":"unknown","type":"removed","versionImpact":"patch","message":"documentation is removed"}]}]}]}]}
   },
   {
     "description": "Modify documentation from a method",
     "oldCode": "service /demo on new http:Listener(8080){\n#Method for get string\n\tremote function hello(string name) {} \n}",
     "newCode": "service /demo on new http:Listener(8080){\n\t#Documentation\n\tremote function hello(string name) {} \n}",
-    "expectedOutput":{"kind":"package","type":"modified","versionImpact":"patch","childDiffs":[
-      {"kind":"module","type":"modified","versionImpact":"patch","childDiffs":[{"childDiffs":[
-        {"kind":"remote function","type":"modified","versionImpact":"patch","childDiffs":[
-          {"kind":"unknown","type":"modified","versionImpact":"patch","message":"documentation is modified"}]}]}]}]}
+    "expectedOutput":{
+      "kind":"package","type":"modified","versionImpact":"patch","childDiffs":[{
+        "kind":"module","type":"modified","versionImpact":"patch","childDiffs":[{
+          "kind":"service","type":"modified","versionImpact":"patch","childDiffs":[{
+            "kind":"remote function","type":"modified","versionImpact":"patch","childDiffs":[{
+              "kind":"unknown","type":"modified","versionImpact":"patch","message":"documentation is modified"}]}]}]}]}
   }
 ]

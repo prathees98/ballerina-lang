@@ -3,7 +3,33 @@
     "description": "Remove public keyword for a object field",
     "oldCode": "service /demo on new http:Listener(8080){\npublic int x=5;\n\t}",
     "newCode": "service /demo on new http:Listener(8080){\n\tint x=5;\n\t}",
-    "expectedOutput":{}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "ambiguous",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "ambiguous",
+          "childDiffs": [
+            {
+              "kind": "service",
+              "type": "modified",
+              "versionImpact": "ambiguous",
+              "childDiffs": [
+                {
+                  "kind": "unknown",
+                  "type": "modified",
+                  "versionImpact": "ambiguous",
+                  "message": "service variable is modified"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Add public keyword for a object field",
