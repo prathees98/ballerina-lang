@@ -1,6 +1,6 @@
 [
   {
-    "description": "Remove qualifier and change the order of a parameter in function",
+    "description": "emove qualifier and change the order of a parameter in function",
     "oldCode": "public function add(int x, int y){}",
     "newCode": "function add(int y , int x ){}",
     "expectedOutput": {
