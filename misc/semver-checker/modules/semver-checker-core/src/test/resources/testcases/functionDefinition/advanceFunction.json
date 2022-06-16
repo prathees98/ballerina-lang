@@ -30,8 +30,8 @@
   },
   {
     "description": "Add a new required parameter and modify the function body in function definition",
-    "oldCode": "public function add(int x, int y) returns int {\n\tint Sum = x + y;\n\treturns sum; \n}",
-    "newCode": "public function add(int x, int y , int z) returns int {\n\tint Sum = x + y + z;\n\treturns sum; \n}",
+    "oldCode": "public function add(int x, int y) returns int {\n\tint out = x + y;\n\treturns out; \n}",
+    "newCode": "public function add(int x, int y , int z) returns int {\n\tint out = x + y + z;\n\treturns out; \n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",

@@ -59,8 +59,9 @@ public class TestUtils {
             BuildProject currentProject = ProjectUtils.createProject(newCode);
             Package oldPackage = oldProject.currentPackage();
             Package currentPackage = currentProject.currentPackage();
-            /*Collection<Diagnostic> currentErrors = currentPackage.getCompilation().diagnosticResult().errors();
-            Collection<Diagnostic> oldErrors = oldPackage.getCompilation().diagnosticResult().errors();*/
+            Collection<Diagnostic> currentErrors = currentPackage.getCompilation().diagnosticResult().errors();
+            Collection<Diagnostic> oldErrors = oldPackage.getCompilation().diagnosticResult().errors();
+            System.out.println(currentErrors);
             assertPackageDiff(oldPackage, currentPackage, expectedOutput, description);
         } catch (Exception e) {
             throw new SemverTestException("failed to load Ballerina package using test data");
