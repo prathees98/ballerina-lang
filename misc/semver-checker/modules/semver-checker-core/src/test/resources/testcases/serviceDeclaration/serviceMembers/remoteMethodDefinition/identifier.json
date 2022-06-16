@@ -1,7 +1,7 @@
 [
   {
     "description": "Remove a remote method definition in a service declaration",
-    "oldCode": "service /demo on new http:Listener(8080){\nremote function onDatagram(readonly & udp:Datagram dg)\t{}\n}",
+    "oldCode": "service /demo on new http:Listener(8080){\nremote function onDatagram()\t{}\n}",
     "newCode": "service /demo on new http:Listener(8080){}",
     "expectedOutput": {
       "kind":"package","type":"modified","versionImpact":"major","childDiffs":[{
@@ -12,7 +12,7 @@
   {
     "description": " Add a remote method definition in a service declaration",
     "oldCode": "service /demo on new udp:Listener(8080){}",
-    "newCode": "service /demo on new udp:Listener(8080){\n\tremote function onDatagram(readonly & udp:Datagram dg)\t{}\n}",
+    "newCode": "service /demo on new udp:Listener(8080){\n\tremote function onDatagram()\t{}\n}",
     "expectedOutput":{
       "kind":"package","type":"modified","versionImpact":"minor","childDiffs":[{
         "kind":"module","type":"modified","versionImpact":"minor","childDiffs":[{
@@ -21,8 +21,8 @@
   },
   {
     "description": "Rename a remote definition in a service declaration",
-    "oldCode": "service /demo on new http:Listener(8080){\nremote function onDatagram(readonly & udp:Datagram dg)\t{}\n}",
-    "newCode": "service /demo on new http:Listener(8080){\nremote function get(readonly & udp:Datagram dg)\t{}\n}",
+    "oldCode": "service /demo on new http:Listener(8080){\nremote function onDatagram()\t{}\n}",
+    "newCode": "service /demo on new http:Listener(8080){\nremote function get()\t{}\n}",
     "expectedOutput": {
       "kind":"package","type":"modified","versionImpact":"major","childDiffs":[{
         "kind":"module","type":"modified","versionImpact":"major","childDiffs":[{

@@ -1,6 +1,6 @@
 [
   {
-    "description": "emove qualifier and change the order of a parameter in function",
+    "description": "Remove qualifier and change the order of a parameter in function",
     "oldCode": "public function add(int x, int y){}",
     "newCode": "function add(int y , int x ){}",
     "expectedOutput": {
@@ -30,8 +30,8 @@
   },
   {
     "description": "Add a new required parameter and modify the function body in function definition",
-    "oldCode": "public function add(int x, int y) returns int {\n\tint out = x + y;\n\treturns out; \n}",
-    "newCode": "public function add(int x, int y , int z) returns int {\n\tint out = x + y + z;\n\treturns out; \n}",
+    "oldCode": "public function adds(int x, int y)  {\n\tint z = 5; \n}",
+    "newCode": "public function adds(int x, int y , int z)  {\n\tint a = 5; \n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",

@@ -54,13 +54,13 @@ public class TestUtils {
             String newCode = testDataObject.get(JSON_ATTR_NEW_CODE).getAsString();
             JsonObject expectedOutput = (JsonObject) testDataObject.get(JSON_ATTR_EXPECTED_RESULTS);
             String description = testDataObject.get("description").getAsString();
-            System.out.println(description);
             BuildProject oldProject = ProjectUtils.createProject(oldCode);
             BuildProject currentProject = ProjectUtils.createProject(newCode);
             Package oldPackage = oldProject.currentPackage();
             Package currentPackage = currentProject.currentPackage();
             Collection<Diagnostic> currentErrors = currentPackage.getCompilation().diagnosticResult().errors();
             Collection<Diagnostic> oldErrors = oldPackage.getCompilation().diagnosticResult().errors();
+            System.out.println(oldErrors);
             System.out.println(currentErrors);
             assertPackageDiff(oldPackage, currentPackage, expectedOutput, description);
         } catch (Exception e) {
@@ -80,8 +80,8 @@ public class TestUtils {
         Optional<PackageDiff> packageDiff = packageComparator.computeDiff();
         if (expectedOutput.equals(new JsonObject())) {
             //Disabled test cases
-            System.out.println(description);
-            System.out.println(packageDiff.get().getAsJson());
+            /*System.out.println(description);
+            System.out.println(packageDiff.get().getAsJson());*/
         } else {
             System.out.println(packageDiff.get().getAsJson());
            packageDiff.ifPresent(diff -> Assert.assertEquals(diff.getAsJson(), expectedOutput));
