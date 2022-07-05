@@ -1,0 +1,26 @@
+[
+  {
+    "description": "Remove a member from a enumeration",
+    "oldCode": "public enum color{\n\tRed,\n\tBlue,\n\tGreen\n}",
+    "newCode": "public enum color{\n\tRed,\n\tBlue\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": " Add a new member to a enumeration",
+    "oldCode": "public enum color{\n\tRed,\n\tBlue\n}",
+    "newCode": "public enum color{\n\tRed,\n\tBlue,\n\tGreen\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Modify a constant  value of an enum member",
+    "oldCode": "public enum color{\n\tEng = \"English\",\n\tSI = \"Sinhala\"\n}",
+    "newCode": "public enum color{\n\tEng = \"Foreign language\",\n\tSI = \"Sinhala\"\n}\n",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change the order of the enum members",
+    "oldCode": "public enum color{\n\tRed,\n\tBlue\n}",
+    "newCode": "public enum color{\n\tBlue,\n\tRed\n}",
+    "expectedOutput": {}
+  }
+]

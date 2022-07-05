@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Add new object field to a class",
+    "oldCode": "public class counter{\n}",
+    "newCode": "",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove object field to a class",
+    "oldCode": "public class counter{\n\tpublic int n;\n}",
+    "newCode": "public class counter{\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Rename object field to a class",
+    "oldCode": "public class counter{\n\tpublic int n;\n}",
+    "newCode": "public class counter{\n\tpublic int a;\n}",
+    "expectedOutput": {}
+  }
+]

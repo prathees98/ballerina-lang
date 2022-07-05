@@ -1,0 +1,14 @@
+[
+  {
+    "description": "Change object field type (int to float) in a class",
+    "oldCode": "public class counter{\n\tpublic int n;\n}",
+    "newCode": "public class counter{\n\tpublic float n;\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change object field type (int to string) in a class",
+    "oldCode": "public class counter{\n\tpublic int n;\n}",
+    "newCode": "public class counter{\n\tpublic string n;\n}",
+    "expectedOutput": {}
+  }
+]

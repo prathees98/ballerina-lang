@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Add documentation",
+    "oldCode": "public public type MapArray map<string>[];",
+    "newCode": "#documentation\npublic public type MapArray map<string>[];",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove documentation",
+    "oldCode": "#documentation\npublic public type MapArray map<string>[];",
+    "newCode": "public public type MapArray map<string>[];",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Modify documentation",
+    "oldCode": "#documentation\npublic public type MapArray map<string>[];",
+    "newCode": "#Map Array\npublic public type MapArray map<string>[];",
+    "expectedOutput": {}
+  }
+]

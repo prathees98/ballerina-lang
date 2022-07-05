@@ -1,0 +1,74 @@
+[
+  {
+    "description": "Remove the public qualifier from a method definition",
+    "oldCode": "public class Employee{ \npublic function add(){}\n}",
+    "newCode": "public class Employee{\nfunction add(){} \n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add public qualifier to a method definition",
+    "oldCode": "public class Employee{\nfunction foo(){}\n}",
+    "newCode": "public class Employee{\npublic function foo(){} \n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Modify qualifier type public to transactional",
+    "oldCode": "public class Employee{\npublic function doUpdate(){}\n}",
+    "newCode": "public class Employee{\ntransactional function doUpdate(){}\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": " Remove the isolated qualifier",
+    "oldCode": "public class Employee{\nisolated function add(){}\n}",
+    "newCode": "public class Employee{\nfunction add(){} \n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add isolated qualifier",
+    "oldCode": "public class Employee{\nfunction foo(){}\n}",
+    "newCode": "public class Employee{\nisolated function foo(){}\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove the transactional qualifier",
+    "oldCode": "public class Employee{\ntransactional function add(){}\n}",
+    "newCode": "public class Employee{\nfunction add(){} \n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add transactional qualifier",
+    "oldCode": "public class Employee{\nfunction foo(){}\n}",
+    "newCode": "public class Employee{\ntransactional function foo(){}\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add another qualifier for a public function.",
+    "oldCode": "public class Employee{\npublic function add(){}\n}",
+    "newCode": "public class Employee{\npublic isolated function add(){}\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove public qualifier from a public isolated function",
+    "oldCode": "public class Employee{\npublic isolated  function add(){}\n}",
+    "newCode": "public class Employee{\npublic function add(){}\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove qualifiers from a public isolated function",
+    "oldCode": "public class Employee{\npublic isolated  function add(){}\n}",
+    "newCode": "public class Employee{\nfunction add(){}\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": " Modify a qualifier from a public isolated function",
+    "oldCode": "public class Employee{\npublic isolated  function add(){}\n}",
+    "newCode": "public class Employee{\npublic transactional function add(){}\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "add more than 1 qualifier to a function",
+    "oldCode": "public class Employee{\nfunction add(){}\n}",
+    "newCode": "public class Employee{\npublic isolated transactional function add(){}\n}",
+    "expectedOutput": {}
+  }
+]

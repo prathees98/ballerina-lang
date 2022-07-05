@@ -1,0 +1,32 @@
+[
+  {
+    "description": "Rename a type definition.",
+    "oldCode": "public type Coord record{\nint x;\nint y;\n };",
+    "newCode": "public type Age record{\nint x;\nint y;\n };",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove a type definition",
+    "oldCode": "public type Coord record{\nint x;\nint y;\n };",
+    "newCode": "",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add a type definition.",
+    "oldCode": "",
+    "newCode": "public type Age record{\nint x;\nint y;\n };",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change a record open to close",
+    "oldCode": "public type Age record{\nint x;\nint y;\n };",
+    "newCode": "public type Age record{|\nint x;\nint y;\n |};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change a record close to open",
+    "oldCode": "public type Age record{|\nint x;\nint y;\n |};",
+    "newCode": "public type Age record{\nint x;\nint y;\n };",
+    "expectedOutput": {}
+  }
+]

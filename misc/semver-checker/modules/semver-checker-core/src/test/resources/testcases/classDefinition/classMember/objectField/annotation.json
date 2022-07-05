@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Add annotation",
+    "oldCode": "public class counter{\n\tpublic int n;\n}",
+    "newCode": "public class counter{\n\t@display{\n\t\tlabel:””\n}\n\tpublic int n;\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove annotation",
+    "oldCode": "public class counter{\n\t@display{\n\t\tlabel:””\n}\n\tpublic int n;\n}",
+    "newCode": "public class counter{\n\tpublic int n;\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Modify annotation",
+    "oldCode": "public class counter{\n\t@display{\n\t\tlabel:””\n}\n\tpublic int n;\n}",
+    "newCode": "public class counter{\n\t@display{\n\t\tlabel:”label”\n}\n\tpublic int n;\n}",
+    "expectedOutput": {}
+  }
+]

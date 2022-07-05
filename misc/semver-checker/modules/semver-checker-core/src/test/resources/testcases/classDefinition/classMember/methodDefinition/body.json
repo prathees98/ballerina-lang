@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Modify the function body",
+    "oldCode": "public class Employee{\npublic function add(int x, int y) returns int {\n\treturn 5; \n}\n}",
+    "newCode": "public class Employee{\npublic function add(int x, int y) returns int {\n\treturn 3; \n}\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add function body",
+    "oldCode": "public class Employee{\npublic function add(int x, int y) t {}\n}",
+    "newCode": "public class Employee{\npublic function add(int x, int y) returns int {\n\treturn 3; \n}\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove function body",
+    "oldCode": "public class Employee{\npublic function add(int x, int y) returns int {\n\treturn 3; \n}\n}",
+    "newCode": "public class Employee{\npublic function add(int x, int y) t {}\n}",
+    "expectedOutput": {}
+  }
+]

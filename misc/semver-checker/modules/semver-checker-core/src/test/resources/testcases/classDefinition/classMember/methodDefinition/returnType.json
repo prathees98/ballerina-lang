@@ -1,0 +1,38 @@
+[
+  {
+    "description": "Change the type of return type in a function",
+    "oldCode": "public class Employee{\npublic function add(int x , int y) returns int {return 5;}\n}",
+    "newCode": "public class Employee{\npublic function add(int x , int y) returns string {return \"5\";}\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove return and make it as a non return function",
+    "oldCode": "public class Employee{\npublic function add(int x , int y) returns int {return 5;}\n}",
+    "newCode": "public class Employee{\npublic function add(int x , int y) {}\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change a function to a return function",
+    "oldCode": "public class Employee{\npublic function add(int x , int y) {}\n}",
+    "newCode": "public class Employee{\npublic function add(int x , int y) returns int {return 5;}\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add return type annotation to a function.",
+    "oldCode": "public class Employee{\npublic function add(int x , int y) returns int{return 5;}\n}",
+    "newCode": "public class Employee{\npublic function add(int x , int y) returns @tainted  int{return 5;}\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": " Remove return type annotation from a function",
+    "oldCode": "public class Employee{\npublic function add(int x , int y) returns @tainted int{return 5;}\n}",
+    "newCode": "public class Employee{\npublic function add(int x , int y) returns int{return 5;}\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Modify return type annotation from a function.",
+    "oldCode": "public class Employee{\npublic function add(int x , int y) returns @tainted int{return 5;}\n}",
+    "newCode": "public class Employee{\npublic function add(int x , int y) returns @untainted  int{return 5;}\n}",
+    "expectedOutput": {}
+  }
+]

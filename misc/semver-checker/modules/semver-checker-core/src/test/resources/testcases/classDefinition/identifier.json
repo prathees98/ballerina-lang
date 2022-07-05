@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Change a class name",
+    "oldCode": "public class Person{}",
+    "newCode": "",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove a class",
+    "oldCode": "public class Person{}",
+    "newCode": "",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add a new class",
+    "oldCode": "",
+    "newCode": "public class Person{}",
+    "expectedOutput": {}
+  }
+]

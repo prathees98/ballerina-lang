@@ -1,0 +1,44 @@
+[
+  {
+    "description": "Add a new field in module type definition",
+    "oldCode": "public type Person object {\n\tstring name;\n\tint age;\n};",
+    "newCode": "public type Person object {\n\tstring name;\n\tint age;\n\tString id;\n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change a field type in module type definition",
+    "oldCode": "public type Person object {\n\tstring name;\n\tint age;\nint id;\n};",
+    "newCode": "public type Person object {\n\tstring name;\n\tint age;\n\tString id;\n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove a field from module type definition",
+    "oldCode": "public type Person object {\n\tstring name;\n\tint age;\nint id;\n};",
+    "newCode": "public type Person object {\n\tstring name;\n\tint age;\n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change the order of the field in module type definition",
+    "oldCode": "public type Person object {\n\tstring name;\n\tint age;\n};",
+    "newCode": "public type Person object {\n\tint age;\n\tString name;\n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change anydata type to a specific type in module type definition",
+    "oldCode": "public type Person object {\n\tstring name;\n\tint age;\nanydata id;\n};",
+    "newCode": "public type Person object {\n\tstring name;\n\tint age;\n\tint id; \n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add public qualifier for a object field",
+    "oldCode": "public type Person object {\nstring name;\n};",
+    "newCode": "public type Person object {\npublic string name;\n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove public qualifier",
+    "oldCode": "public type Person object {\npublic string name;\n};",
+    "newCode": "public type Person object {\nstring name;\n};",
+    "expectedOutput": {}
+  }
+]

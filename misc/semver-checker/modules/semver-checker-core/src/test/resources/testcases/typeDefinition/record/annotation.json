@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Add annotation to a type definition",
+    "oldCode": "public type Person record {\n\tint age;\n\tstring name;\n};",
+    "newCode": "@deprecated\npublic type Person record {\n\tint age;\n\tstring name;\n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove annotation from a type definition",
+    "oldCode": "@tainted\npublic type Person record {\n\tint age;\n\tstring name;\n};",
+    "newCode": "public type Person record {\n\tint age;\n\tstring name;\n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Modify annotation from a type definition",
+    "oldCode": "@tainted\npublic type Person record {\n\tint age;\n\tstring name;\n};",
+    "newCode": "@deprecated\npublic type Person record {\n\tint age;\n\tstring name;\n};",
+    "expectedOutput": {}
+  }
+]

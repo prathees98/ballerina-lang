@@ -1,0 +1,38 @@
+[
+  {
+    "description": "Add public qualifier",
+    "oldCode": "class Employee{}",
+    "newCode": "public class Employee{}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove public qualifier",
+    "oldCode": "public class Employee{}",
+    "newCode": "class Employee{}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add isolated qualifier",
+    "oldCode": "class Employee{}",
+    "newCode": "isolated class Employee{}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove isolated qualifier",
+    "oldCode": "isolated class Employee{}",
+    "newCode": "class Employee{}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Modify qualifier",
+    "oldCode": "public class Employee{}",
+    "newCode": "isolated class Employee{}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add 2 qualifiers",
+    "oldCode": "class Employee{}",
+    "newCode": "public isolated class Employee{}",
+    "expectedOutput": {}
+  }
+]

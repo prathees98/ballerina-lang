@@ -1,0 +1,8 @@
+[
+  {
+    "description": "Object type inclusion",
+    "oldCode": "public class counter{\n\tpublic int n;\n}\npublic class demo {}",
+    "newCode": "public class counter{\n\tpublic int n;\n}\npublic class demo{\n\t*counter;\n}",
+    "expectedOutput": {}
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "description": "Change the type",
+    "oldCode": "public type MapArray map<string>[];",
+    "newCode": "public type MapArray map<int>[];",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change the type to any data",
+    "oldCode": "public type MapArray map<string>[];",
+    "newCode": "public type MapArray map<anydata>[];",
+    "expectedOutput": {}
+  }
+]

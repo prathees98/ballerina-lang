@@ -1,0 +1,32 @@
+[
+  {
+    "description": "Remove public keyword for a object field in a class",
+    "oldCode": "public class counter{\n\tpublic int n;\n}",
+    "newCode": "public class counter{\n\tint n;\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add public keyword for a object field in a class",
+    "oldCode": "public class counter{\n\tint n;\n}",
+    "newCode": "public class counter{\n\tpublic int n;\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove Final keyword for a object field in a class",
+    "oldCode": "public class counter{\n\tfinal int n;\n}",
+    "newCode": "public class counter{\n\tint n;\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add final keyword for a object field in a class",
+    "oldCode": "public class counter{\n\tint n;\n}",
+    "newCode": "public class counter{\n\tfinal int n;\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add final and public keyword for a object field in a class",
+    "oldCode": "public class counter{\n\tint n;\n}",
+    "newCode": "public class counter{\n\tpublic final int n;\n}",
+    "expectedOutput": {}
+  }
+]

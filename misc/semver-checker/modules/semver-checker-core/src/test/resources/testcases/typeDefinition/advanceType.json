@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Remove a field , Add public qualifier",
+    "oldCode": "type Age record{\nint x;\nint y;\n };",
+    "newCode": "public type Age record{\nint x;\n };",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change a type from record to object",
+    "oldCode": "public type Age record{\nint x;\nint y;\n };",
+    "newCode": "public type Age object{\nint x;\nint y;\n };",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add new field , add annotation , remove documentation",
+    "oldCode": "#documentation\npublic type Age record{\nint x;\n };",
+    "newCode": "@tainted\npublic type Age record{\nint x;\nint y;\n };",
+    "expectedOutput": {}
+  }
+]

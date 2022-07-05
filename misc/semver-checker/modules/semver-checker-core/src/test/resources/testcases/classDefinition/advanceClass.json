@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Add a method , add a object field",
+    "oldCode": "public class Employee{}",
+    "newCode": "public class Employee{\n\tpublic function foo(){}\n\tpublic int x;\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add a method , Remove a object field , Remove public qualifier , Add documentation",
+    "oldCode": "public class Employee{\n\tpublic int x;\n}",
+    "newCode": "#documentation\nclass Employee{\n\tpublic function foo(){}\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Rename  a object field , Add a new method,  Remove annotation for class , Add documentation for class , remove documentation for method",
+    "oldCode": "@deprecated\npublic class Employee{\n\t#Method documentation\npublic function foo(){}\n\tpublic int x;\n}",
+    "newCode": "#documentation\nclass Employee{\n\tpublic function foo(){}\n\tpublic int y;\n\tpublic function hello(){}\n}",
+    "expectedOutput": {}
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Add documentation",
+    "oldCode": "public class counter{\n\tpublic int n;\n}",
+    "newCode": "public class counter{\n\t#documentation\n\tpublic int n;\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove documentation",
+    "oldCode": "public class counter{\n\t#documentation\n\tpublic int n;\n}",
+    "newCode": "public class counter{\n\tpublic int n;\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Modify documentation",
+    "oldCode": "public class counter{\n\t#documentation\n\tpublic int n;\n}",
+    "newCode": "public class counter{\n\t#Object field\n\tpublic int n;\n}",
+    "expectedOutput": {}
+  }
+]

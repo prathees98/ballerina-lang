@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Change a function name",
+    "oldCode": "public class Employee{\npublic function hello(){}\n}",
+    "newCode": "public class Employee{\npublic function hi(){}\n}",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove a function",
+    "oldCode": "public class Employee{\npublic function hello(){}\n}",
+    "newCode": "",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add a new function",
+    "oldCode": "",
+    "newCode": "public class Employee{\npublic function hello(){}\n}",
+    "expectedOutput": {}
+  }
+]
