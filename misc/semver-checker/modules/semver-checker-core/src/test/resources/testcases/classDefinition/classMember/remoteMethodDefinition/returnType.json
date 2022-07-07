@@ -141,12 +141,6 @@
     "expectedOutput": {}
   },
   {
-    "description": " Remove return type annotation from a function",
-    "oldCode": "public class Employee{\nremote function add(int x , int y) returns @tainted int{return 5;}\n}",
-    "newCode": "public class Employee{\nremote function add(int x , int y) returns int{return 5;}\n}",
-    "expectedOutput": {}
-  },
-  {
     "description": "Modify return type annotation from a function.",
     "oldCode": "public class Employee{\nremote function add(int x , int y) returns @tainted int{return 5;}\n}",
     "newCode": "public class Employee{\nremote function add(int x , int y) returns @untainted  int{return 5;}\n}",

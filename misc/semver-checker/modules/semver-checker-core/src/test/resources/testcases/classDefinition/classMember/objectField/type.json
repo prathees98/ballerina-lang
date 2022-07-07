@@ -19,10 +19,17 @@
               "versionImpact": "ambiguous",
               "childDiffs": [
                 {
-                  "kind": "service field",
+                  "kind": "object field",
                   "type": "modified",
                   "versionImpact": "ambiguous",
-                  "message": "object field type changed from 'int' to 'float'"
+                  "childDiffs": [
+                    {
+                      "kind": "object field",
+                      "type": "modified",
+                      "versionImpact": "ambiguous",
+                      "message": "object field type changed from 'int' to 'float'"
+                    }
+                  ]
                 }
               ]
             }
@@ -51,10 +58,17 @@
               "versionImpact": "ambiguous",
               "childDiffs": [
                 {
-                  "kind": "service field",
+                  "kind": "object field",
                   "type": "modified",
                   "versionImpact": "ambiguous",
-                  "message": "object field type changed from 'int' to 'string'"
+                  "childDiffs": [
+                    {
+                      "kind": "object field",
+                      "type": "modified",
+                      "versionImpact": "ambiguous",
+                      "message": "object field type changed from 'int' to 'string'"
+                    }
+                  ]
                 }
               ]
             }

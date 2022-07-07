@@ -93,18 +93,51 @@
     "description": "Change a function to a return function",
     "oldCode": "public class Employee{\nresource function get add(int x , int y) {}\n}",
     "newCode": "public class Employee{\nresource function get add(int x , int y) returns int {return 5;}\n}",
-    "expectedOutput": {}
+    "expectedOutput": {
+      "kind": "package",
+      "type": "modified",
+      "versionImpact": "major",
+      "childDiffs": [
+        {
+          "kind": "module",
+          "type": "modified",
+          "versionImpact": "major",
+          "childDiffs": [
+            {
+              "kind": "class",
+              "type": "modified",
+              "versionImpact": "major",
+              "childDiffs": [
+                {
+                  "kind": "resource function",
+                  "type": "modified",
+                  "versionImpact": "major",
+                  "childDiffs": [
+                    {
+                      "kind": "unknown",
+                      "type": "new",
+                      "versionImpact": "major",
+                      "message": "return type is added"
+                    },
+                    {
+                      "kind": "unknown",
+                      "type": "modified",
+                      "versionImpact": "patch",
+                      "message": "function body is modified"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "description": "Add return type annotation to a function.",
     "oldCode": "public class Employee{\nresource function get add(int x , int y) returns int{return 5;}\n}",
     "newCode": "public class Employee{\nresource function get add(int x , int y) returns @tainted  int{return 5;}\n}",
-    "expectedOutput": {}
-  },
-  {
-    "description": " Remove return type annotation from a function",
-    "oldCode": "public class Employee{\nresource function get add(int x , int y) returns @tainted int{return 5;}\n}",
-    "newCode": "public class Employee{\nresource function get add(int x , int y) returns int{return 5;}\n}",
     "expectedOutput": {}
   },
   {

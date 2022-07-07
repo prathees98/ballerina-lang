@@ -19,10 +19,17 @@
               "versionImpact": "major",
               "childDiffs": [
                 {
-                  "kind": "service field",
-                  "type": "removed",
+                  "kind": "object field",
+                  "type": "modified",
                   "versionImpact": "major",
-                  "message": "'public' qualifier is removed from object field 'n'"
+                  "childDiffs": [
+                    {
+                      "kind": "object field",
+                      "type": "removed",
+                      "versionImpact": "major",
+                      "message": "'public' qualifier is removed from object field 'n'"
+                    }
+                  ]
                 }
               ]
             }
@@ -51,10 +58,17 @@
               "versionImpact": "minor",
               "childDiffs": [
                 {
-                  "kind": "service field",
-                  "type": "new",
+                  "kind": "object field",
+                  "type": "modified",
                   "versionImpact": "minor",
-                  "message": "'public' qualifier is added to object field 'n'"
+                  "childDiffs": [
+                    {
+                      "kind": "object field",
+                      "type": "new",
+                      "versionImpact": "minor",
+                      "message": "'public' qualifier is added to object field 'n'"
+                    }
+                  ]
                 }
               ]
             }
@@ -83,10 +97,17 @@
               "versionImpact": "patch",
               "childDiffs": [
                 {
-                  "kind": "service field",
-                  "type": "removed",
+                  "kind": "object field",
+                  "type": "modified",
                   "versionImpact": "patch",
-                  "message": "'final' qualifier is removed from object field 'n'"
+                  "childDiffs": [
+                    {
+                      "kind": "object field",
+                      "type": "removed",
+                      "versionImpact": "patch",
+                      "message": "'final' qualifier is removed from object field 'n'"
+                    }
+                  ]
                 }
               ]
             }
@@ -102,23 +123,30 @@
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
-      "versionImpact": "ambiguous",
+      "versionImpact": "patch",
       "childDiffs": [
         {
           "kind": "module",
           "type": "modified",
-          "versionImpact": "ambiguous",
+          "versionImpact": "patch",
           "childDiffs": [
             {
               "kind": "class",
               "type": "modified",
-              "versionImpact": "ambiguous",
+              "versionImpact": "patch",
               "childDiffs": [
                 {
-                  "kind": "service field",
-                  "type": "new",
-                  "versionImpact": "ambiguous",
-                  "message": "'final' qualifier is added to object field 'n'"
+                  "kind": "object field",
+                  "type": "modified",
+                  "versionImpact": "patch",
+                  "childDiffs": [
+                    {
+                      "kind": "object field",
+                      "type": "new",
+                      "versionImpact": "ambiguous",
+                      "message": "'final' qualifier is added to object field 'n'"
+                    }
+                  ]
                 }
               ]
             }
@@ -147,16 +175,23 @@
               "versionImpact": "ambiguous",
               "childDiffs": [
                 {
-                  "kind": "service field",
-                  "type": "new",
-                  "versionImpact": "minor",
-                  "message": "'public' qualifier is added to object field 'n'"
-                },
-                {
-                  "kind": "service field",
-                  "type": "new",
+                  "kind": "object field",
+                  "type": "modified",
                   "versionImpact": "ambiguous",
-                  "message": "'final' qualifier is added to object field 'n'"
+                  "childDiffs": [
+                    {
+                      "kind": "object field",
+                      "type": "new",
+                      "versionImpact": "minor",
+                      "message": "'public' qualifier is added to object field 'n'"
+                    },
+                    {
+                      "kind": "object field",
+                      "type": "new",
+                      "versionImpact": "ambiguous",
+                      "message": "'final' qualifier is added to object field 'n'"
+                    }
+                  ]
                 }
               ]
             }

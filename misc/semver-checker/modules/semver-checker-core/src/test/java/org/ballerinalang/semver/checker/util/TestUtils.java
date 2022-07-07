@@ -51,7 +51,7 @@ public class TestUtils {
             String oldCode = testDataObject.get(JSON_ATTR_OLD_CODE).getAsString();
             String newCode = testDataObject.get(JSON_ATTR_NEW_CODE).getAsString();
             String d = String.valueOf(testDataObject.get("description"));
-            System.out.println(d);
+            /*System.out.println(d);*/
             JsonObject expectedOutput = (JsonObject) testDataObject.get(JSON_ATTR_EXPECTED_RESULTS);
             BuildProject oldProject = ProjectUtils.createProject(oldCode);
             BuildProject currentProject = ProjectUtils.createProject(newCode);
@@ -74,11 +74,11 @@ public class TestUtils {
         PackageComparator packageComparator = new PackageComparator(currentPackage, oldPackage);
         Optional<PackageDiff> packageDiff = packageComparator.computeDiff();
         if (expectedOutput.equals(new JsonObject())) {
-            System.out.println(packageDiff.get().getAsString());
-            System.out.println(packageDiff.get().getAsJson());
+           /* System.out.println(packageDiff.get().getAsString());
+            System.out.println(packageDiff.get().getAsJson());*/
             // disabled test cases
         } else {
-            System.out.println(packageDiff.get().getAsString());
+           /* System.out.println(packageDiff.get().getAsString());*/
             packageDiff.ifPresent(diff -> Assert.assertEquals(diff.getAsJson(), expectedOutput));
         }
     }
