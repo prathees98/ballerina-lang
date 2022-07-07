@@ -1,8 +1,8 @@
 [
   {
-    "description": "Modify the function body",
-    "oldCode": "public class Employee{\npublic function add(int x, int y) returns int {\n\treturn 5; \n}\n}",
-    "newCode": "public class Employee{\npublic function add(int x, int y) returns int {\n\treturn 3; \n}\n}",
+    "description": "Change the documentation in function",
+    "oldCode": "public class Employee{\n# Description\n#\n# +x - Parameter Description\n# +y - Parameter Description\nremote function add(int x , int y ){}\n}",
+    "newCode": "public class Employee{\n# Description\n#\n# +x - x is a int\n# +y - y is a int\nremote function add(int x , int y ){}\n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
@@ -19,15 +19,15 @@
               "versionImpact": "patch",
               "childDiffs": [
                 {
-                  "kind": "function",
+                  "kind": "remote function",
                   "type": "modified",
                   "versionImpact": "patch",
                   "childDiffs": [
                     {
-                      "kind": "unknown",
+                      "kind": "documentation",
                       "type": "modified",
                       "versionImpact": "patch",
-                      "message": "function body is modified"
+                      "message": "documentation is modified"
                     }
                   ]
                 }
@@ -39,9 +39,9 @@
     }
   },
   {
-    "description": "Add function body",
-    "oldCode": "public class Employee{\npublic function add(int x, int y) {}\n}",
-    "newCode": "public class Employee{\npublic function add(int x, int y) {\n\tint z = 3; \n}\n}",
+    "description": "Add documentation in function",
+    "oldCode": "public class Employee{\nremote function add(int x , int y ){}\n}",
+    "newCode": "public class Employee{\n# Description\n#\n# +x - Parameter Description\n# +y - Parameter Description\nremote function add(int x , int y ){}\n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
@@ -58,15 +58,15 @@
               "versionImpact": "patch",
               "childDiffs": [
                 {
-                  "kind": "function",
+                  "kind": "remote function",
                   "type": "modified",
                   "versionImpact": "patch",
                   "childDiffs": [
                     {
-                      "kind": "unknown",
-                      "type": "modified",
+                      "kind": "documentation",
+                      "type": "new",
                       "versionImpact": "patch",
-                      "message": "function body is modified"
+                      "message": "documentation is added"
                     }
                   ]
                 }
@@ -78,9 +78,9 @@
     }
   },
   {
-    "description": "Remove function body",
-    "oldCode": "public class Employee{\npublic function add(int x, int y) {\n\tint z = 3; \n}\n}",
-    "newCode": "public class Employee{\npublic function add(int x, int y) {}\n}",
+    "description": "Remove documentation in function",
+    "oldCode": "public class Employee{\n# Description\n#\n# +x - Parameter Description\n# +y - Parameter Description\nremote function add(int x , int y ){}\n}",
+    "newCode": "public class Employee{\nremote function add(int x , int y ){}\n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
@@ -97,15 +97,15 @@
               "versionImpact": "patch",
               "childDiffs": [
                 {
-                  "kind": "function",
+                  "kind": "remote function",
                   "type": "modified",
                   "versionImpact": "patch",
                   "childDiffs": [
                     {
-                      "kind": "unknown",
-                      "type": "modified",
+                      "kind": "documentation",
+                      "type": "removed",
                       "versionImpact": "patch",
-                      "message": "function body is modified"
+                      "message": "documentation is removed"
                     }
                   ]
                 }

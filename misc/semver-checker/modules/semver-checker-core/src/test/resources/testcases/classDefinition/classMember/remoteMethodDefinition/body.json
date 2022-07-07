@@ -1,8 +1,8 @@
 [
   {
     "description": "Modify the function body",
-    "oldCode": "public class Employee{\npublic function add(int x, int y) returns int {\n\treturn 5; \n}\n}",
-    "newCode": "public class Employee{\npublic function add(int x, int y) returns int {\n\treturn 3; \n}\n}",
+    "oldCode": "public class Employee{\nremote function add(int x, int y) returns int {\n\treturn 5; \n}\n}",
+    "newCode": "public class Employee{\nremote function add(int x, int y) returns int {\n\treturn 3; \n}\n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
@@ -19,7 +19,7 @@
               "versionImpact": "patch",
               "childDiffs": [
                 {
-                  "kind": "function",
+                  "kind": "remote function",
                   "type": "modified",
                   "versionImpact": "patch",
                   "childDiffs": [
@@ -40,8 +40,8 @@
   },
   {
     "description": "Add function body",
-    "oldCode": "public class Employee{\npublic function add(int x, int y) {}\n}",
-    "newCode": "public class Employee{\npublic function add(int x, int y) {\n\tint z = 3; \n}\n}",
+    "oldCode": "public class Employee{\nremote function add(int x, int y) {}\n}",
+    "newCode": "public class Employee{\nremote function add(int x, int y) {\n\tint z = 3; \n}\n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
@@ -58,7 +58,7 @@
               "versionImpact": "patch",
               "childDiffs": [
                 {
-                  "kind": "function",
+                  "kind": "remote function",
                   "type": "modified",
                   "versionImpact": "patch",
                   "childDiffs": [
@@ -79,8 +79,8 @@
   },
   {
     "description": "Remove function body",
-    "oldCode": "public class Employee{\npublic function add(int x, int y) {\n\tint z = 3; \n}\n}",
-    "newCode": "public class Employee{\npublic function add(int x, int y) {}\n}",
+    "oldCode": "public class Employee{\nremote function add(int x, int y) {\n\tint z = 3; \n}\n}",
+    "newCode": "public class Employee{\nremote function add(int x, int y) {}\n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
@@ -97,7 +97,7 @@
               "versionImpact": "patch",
               "childDiffs": [
                 {
-                  "kind": "function",
+                  "kind": "remote function",
                   "type": "modified",
                   "versionImpact": "patch",
                   "childDiffs": [

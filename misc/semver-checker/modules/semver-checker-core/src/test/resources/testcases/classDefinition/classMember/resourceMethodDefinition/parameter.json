@@ -1,8 +1,8 @@
 [
   {
     "description": "Change a parameter type in a function",
-    "oldCode": "public class Employee{\npublic function add(int x, int y){}\n}",
-    "newCode": "public class Employee{\npublic function add(int x , string y){}\n}",
+    "oldCode": "public class Employee{\nresource function get add(int x, int y){}\n}",
+    "newCode": "public class Employee{\nresource function get add(int x , string y){}\n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
@@ -19,7 +19,7 @@
               "versionImpact": "ambiguous",
               "childDiffs": [
                 {
-                  "kind": "function",
+                  "kind": "resource function",
                   "type": "modified",
                   "versionImpact": "ambiguous",
                   "childDiffs": [
@@ -40,8 +40,8 @@
   },
   {
     "description": "Change a parameter in a function",
-    "oldCode": "public class Employee{\npublic function add(int x, int y){}\n}",
-    "newCode": "public class Employee{\npublic function add(int x , string z){}\n}",
+    "oldCode": "public class Employee{\nresource function get add(int x, int y){}\n}",
+    "newCode": "public class Employee{\nresource function get add(int x , string z){}\n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
@@ -58,7 +58,7 @@
               "versionImpact": "major",
               "childDiffs": [
                 {
-                  "kind": "function",
+                  "kind": "resource function",
                   "type": "modified",
                   "versionImpact": "major",
                   "childDiffs": [
@@ -85,8 +85,8 @@
   },
   {
     "description": "Remove a parameter in a function",
-    "oldCode": "public class Employee{\npublic function add(int x, int y){}\n}",
-    "newCode": "public class Employee{\npublic function add(int x ){}\n}",
+    "oldCode": "public class Employee{\nresource function get add(int x, int y){}\n}",
+    "newCode": "public class Employee{\nresource function get add(int x ){}\n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
@@ -103,7 +103,7 @@
               "versionImpact": "major",
               "childDiffs": [
                 {
-                  "kind": "function",
+                  "kind": "resource function",
                   "type": "modified",
                   "versionImpact": "major",
                   "childDiffs": [
@@ -124,8 +124,8 @@
   },
   {
     "description": "Add a new parameter to the function",
-    "oldCode": "public class Employee{\npublic function add(int x, int y){}\n}",
-    "newCode": "public class Employee{\npublic function add(int x , int y , int z){}\n}",
+    "oldCode": "public class Employee{\nresource function get add(int x, int y){}\n}",
+    "newCode": "public class Employee{\nresource function get add(int x , int y , int z){}\n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
@@ -142,7 +142,7 @@
               "versionImpact": "major",
               "childDiffs": [
                 {
-                  "kind": "function",
+                  "kind": "resource function",
                   "type": "modified",
                   "versionImpact": "major",
                   "childDiffs": [
@@ -163,14 +163,14 @@
   },
   {
     "description": "Change the order of a parameter in function",
-    "oldCode": "public class Employee{\npublic function add(int x, string y){}\n}",
-    "newCode": "public class Employee{\npublic function add(string y, int x){}\n}",
+    "oldCode": "public class Employee{\nresource function get add(int x, string y){}\n}",
+    "newCode": "public class Employee{\nresource function get add(string y, int x){}\n}",
     "expectedOutput": {}
   },
   {
     "description": "Add a default value for a required parameter in function",
-    "oldCode": "public class Employee{\npublic function add(int x){}\n}",
-    "newCode": "public class Employee{\npublic function add( int x =  7){}\n}",
+    "oldCode": "public class Employee{\nresource function get add(int x){}\n}",
+    "newCode": "public class Employee{\nresource function get add( int x =  7){}\n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
@@ -187,7 +187,7 @@
               "versionImpact": "minor",
               "childDiffs": [
                 {
-                  "kind": "function",
+                  "kind": "resource function",
                   "type": "modified",
                   "versionImpact": "minor",
                   "childDiffs": [
@@ -208,8 +208,8 @@
   },
   {
     "description": "Change the default value parameter as a required parameter in function",
-    "oldCode": "public class Employee{\npublic function add( int y = 7){}\n}",
-    "newCode": "public class Employee{\npublic function add(int y){}\n}",
+    "oldCode": "public class Employee{\nresource function get add( int y = 7){}\n}",
+    "newCode": "public class Employee{\nresource function get add(int y){}\n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
@@ -226,7 +226,7 @@
               "versionImpact": "major",
               "childDiffs": [
                 {
-                  "kind": "function",
+                  "kind": "resource function",
                   "type": "modified",
                   "versionImpact": "major",
                   "childDiffs": [
@@ -247,8 +247,8 @@
   },
   {
     "description": "Change the default value parameter to another default value in function",
-    "oldCode": "public class Employee{\npublic function add(int y = 7){}\n}",
-    "newCode": "public class Employee{\npublic function add(int y = 5){}\n}",
+    "oldCode": "public class Employee{\nresource function get add(int y = 7){}\n}",
+    "newCode": "public class Employee{\nresource function get add(int y = 5){}\n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
@@ -265,7 +265,7 @@
               "versionImpact": "minor",
               "childDiffs": [
                 {
-                  "kind": "function",
+                  "kind": "resource function",
                   "type": "modified",
                   "versionImpact": "minor",
                   "childDiffs": [
@@ -286,20 +286,20 @@
   },
   {
     "description": "Add parameter annotation to a function.",
-    "oldCode": "public class Employee{\npublic function secureFunction(string name){}\n}",
-    "newCode": "public class Employee{\npublic function secureFunction(@untainted string name){}\n}",
+    "oldCode": "public class Employee{\nresource function get secureFunction(string name){}\n}",
+    "newCode": "public class Employee{\nresource function get secureFunction(@untainted string name){}\n}",
     "expectedOutput": {}
   },
   {
     "description": "Remove parameter annotation to a function.",
-    "oldCode": "public class Employee{\npublic function secureFunction(@untainted string name){}\n}",
-    "newCode": "public class Employee{\npublic function secureFunction(string name){}\n}",
+    "oldCode": "public class Employee{\nresource function get secureFunction(@untainted string name){}\n}",
+    "newCode": "public class Employee{\nresource function get secureFunction(string name){}\n}",
     "expectedOutput": {}
   },
   {
     "description": "Modify parameter annotation in a function.",
-    "oldCode": "public class Employee{\npublic function secureFunction(@untainted string name){}\n}",
-    "newCode": "public class Employee{\npublic function secureFunction(@tainted string name){}\n}",
+    "oldCode": "public class Employee{\nresource function get secureFunction(@untainted string name){}\n}",
+    "newCode": "public class Employee{\nresource function get secureFunction(@tainted string name){}\n}",
     "expectedOutput": {}
   }
 ]

@@ -1,8 +1,8 @@
 [
   {
     "description": "Change a function name",
-    "oldCode": "public class Employee{\npublic function hello(){}\n}",
-    "newCode": "public class Employee{\npublic function hi(){}\n}",
+    "oldCode": "public class Employee{\nremote function hello(){}\n}",
+    "newCode": "public class Employee{\nremote function hi(){}\n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
@@ -19,12 +19,12 @@
               "versionImpact": "major",
               "childDiffs": [
                 {
-                  "kind": "function",
+                  "kind": "remote function",
                   "type": "new",
                   "versionImpact": "minor"
                 },
                 {
-                  "kind": "function",
+                  "kind": "remote function",
                   "type": "removed",
                   "versionImpact": "major"
                 }
@@ -37,7 +37,7 @@
   },
   {
     "description": "Remove a function",
-    "oldCode": "public class Employee{\npublic function hello(){}\n}",
+    "oldCode": "public class Employee{\nremote function hello(){}\n}",
     "newCode": "public class Employee{}",
     "expectedOutput": {
       "kind": "package",
@@ -55,7 +55,7 @@
               "versionImpact": "major",
               "childDiffs": [
                 {
-                  "kind": "function",
+                  "kind": "remote function",
                   "type": "removed",
                   "versionImpact": "major"
                 }
@@ -69,7 +69,7 @@
   {
     "description": "Add a new function",
     "oldCode": "public class Employee{}",
-    "newCode": "public class Employee{\npublic function hello(){}\n}",
+    "newCode": "public class Employee{\nremote function hello(){}\n}",
     "expectedOutput": {
       "kind": "package",
       "type": "modified",
@@ -86,7 +86,7 @@
               "versionImpact": "minor",
               "childDiffs": [
                 {
-                  "kind": "function",
+                  "kind": "remote function",
                   "type": "new",
                   "versionImpact": "minor"
                 }

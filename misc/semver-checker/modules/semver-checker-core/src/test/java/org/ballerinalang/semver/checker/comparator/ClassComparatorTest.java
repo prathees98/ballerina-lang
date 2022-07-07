@@ -42,9 +42,9 @@ public class ClassComparatorTest {
     private static final String TEST_ROOT = "src/test/resources/testcases/classDefinition/";
     private static final String MEMBER_TEST_ROOT = TEST_ROOT + "classMember/";
     private static final String METHOD_TEST_ROOT = MEMBER_TEST_ROOT + "methodDefinition/";
+    private static final String REMOTE_METHOD_TEST_ROOT = MEMBER_TEST_ROOT + "remoteMethodDefinition/";
+    private static final String RESOURCE_METHOD_TEST_ROOT = MEMBER_TEST_ROOT + "resourceMethodDefinition/";
     private static final String OBJECT_FIELD_TEST_ROOT = MEMBER_TEST_ROOT + "objectField/";
-
-    private static final String OBJECT_TYPE_INCLUSION_TESTCASE = MEMBER_TEST_ROOT + "objectTypeInclusion.json";
 
     private static final String CLASS_ANNOTATION_TESTCASE = TEST_ROOT + "annotation.json";
     private static final String CLASS_DOCUMENTATION_TESTCASE = TEST_ROOT + "documentation.json";
@@ -66,6 +66,22 @@ public class ClassComparatorTest {
     private static final String METHOD_PARAMETER_TESTCASE = METHOD_TEST_ROOT + "parameter.json";
     private static final String METHOD_QUALIFIER_TESTCASE = METHOD_TEST_ROOT + "qualifier.json";
     private static final String METHOD_RETURN_TESTCASE = METHOD_TEST_ROOT + "returnType.json";
+
+    private static final String REMOTE_METHOD_ANNOTATION_TESTCASE = REMOTE_METHOD_TEST_ROOT + "annotation.json";
+    private static final String REMOTE_METHOD_DOCUMENTATION_TESTCASE = REMOTE_METHOD_TEST_ROOT + "documentation.json";
+    private static final String REMOTE_METHOD_BODY_TESTCASE = REMOTE_METHOD_TEST_ROOT + "body.json";
+    private static final String REMOTE_METHOD_IDENTIFIER_TESTCASE = REMOTE_METHOD_TEST_ROOT + "identifier.json";
+    private static final String REMOTE_METHOD_PARAMETER_TESTCASE = REMOTE_METHOD_TEST_ROOT + "parameter.json";
+    private static final String REMOTE_METHOD_QUALIFIER_TESTCASE = REMOTE_METHOD_TEST_ROOT + "qualifier.json";
+    private static final String REMOTE_METHOD_RETURN_TESTCASE = REMOTE_METHOD_TEST_ROOT + "returnType.json";
+
+    private static final String RESOURCE_METHOD_ANNOTATION_TESTCASE = RESOURCE_METHOD_TEST_ROOT + "annotation.json";
+    private static final String RESOURCE_METHOD_DOCUMENTATION_TESTCASE = RESOURCE_METHOD_TEST_ROOT + "documentation.json";
+    private static final String RESOURCE_METHOD_BODY_TESTCASE = RESOURCE_METHOD_TEST_ROOT + "body.json";
+    private static final String RESOURCE_METHOD_IDENTIFIER_TESTCASE = RESOURCE_METHOD_TEST_ROOT + "identifier.json";
+    private static final String RESOURCE_METHOD_PARAMETER_TESTCASE = RESOURCE_METHOD_TEST_ROOT + "parameter.json";
+    private static final String RESOURCE_METHOD_QUALIFIER_TESTCASE = RESOURCE_METHOD_TEST_ROOT + "qualifier.json";
+    private static final String RESOURCE_METHOD_RETURN_TESTCASE = RESOURCE_METHOD_TEST_ROOT + "returnType.json";
 
     @Test(dataProvider = "ClassTestDataProvider")
     public void testClassAnnotation(JsonElement testData) throws Exception {
@@ -89,11 +105,6 @@ public class ClassComparatorTest {
 
     @Test(dataProvider = "ClassTestDataProvider")
     public void testAdvanceClass(JsonElement testData) throws Exception {
-        executeTestData(testData);
-    }
-
-    @Test(dataProvider = "ClassTestDataProvider")
-    public void testClassMemberObjectTypeInclusion(JsonElement testData) throws Exception {
         executeTestData(testData);
     }
 
@@ -162,6 +173,76 @@ public class ClassComparatorTest {
         executeTestData(testData);
     }
 
+    @Test(dataProvider = "ClassTestDataProvider")
+    public void testClassRemoteMethodAnnotation(JsonElement testData) throws Exception {
+        executeTestData(testData);
+    }
+
+    @Test(dataProvider = "ClassTestDataProvider")
+    public void testClassRemoteMethodDocumentation(JsonElement testData) throws Exception {
+        executeTestData(testData);
+    }
+
+    @Test(dataProvider = "ClassTestDataProvider")
+    public void testClassRemoteMethodBody(JsonElement testData) throws Exception {
+        executeTestData(testData);
+    }
+
+    @Test(dataProvider = "ClassTestDataProvider")
+    public void testClassRemoteMethodIdentifier(JsonElement testData) throws Exception {
+        executeTestData(testData);
+    }
+
+    @Test(dataProvider = "ClassTestDataProvider")
+    public void testClassRemoteMethodParameter(JsonElement testData) throws Exception {
+        executeTestData(testData);
+    }
+
+    @Test(dataProvider = "ClassTestDataProvider")
+    public void testClassRemoteMethodQualifier(JsonElement testData) throws Exception {
+        executeTestData(testData);
+    }
+
+    @Test(dataProvider = "ClassTestDataProvider")
+    public void testClassRemoteMethodReturn(JsonElement testData) throws Exception {
+        executeTestData(testData);
+    }
+
+    @Test(dataProvider = "ClassTestDataProvider")
+    public void testClassResourceMethodAnnotation(JsonElement testData) throws Exception {
+        executeTestData(testData);
+    }
+
+    @Test(dataProvider = "ClassTestDataProvider")
+    public void testClassResourceMethodDocumentation(JsonElement testData) throws Exception {
+        executeTestData(testData);
+    }
+
+    @Test(dataProvider = "ClassTestDataProvider")
+    public void testClassResourceMethodBody(JsonElement testData) throws Exception {
+        executeTestData(testData);
+    }
+
+    @Test(dataProvider = "ClassTestDataProvider")
+    public void testClassResourceMethodIdentifier(JsonElement testData) throws Exception {
+        executeTestData(testData);
+    }
+
+    @Test(dataProvider = "ClassTestDataProvider")
+    public void testClassResourceMethodParameter(JsonElement testData) throws Exception {
+        executeTestData(testData);
+    }
+
+    @Test(dataProvider = "ClassTestDataProvider")
+    public void testClassResourceMethodQualifier(JsonElement testData) throws Exception {
+        executeTestData(testData);
+    }
+
+    @Test(dataProvider = "ClassTestDataProvider")
+    public void testClassResourceMethodReturn(JsonElement testData) throws Exception {
+        executeTestData(testData);
+    }
+
     @DataProvider(name = "ClassTestDataProvider")
     public Object[] ClassTestDataProvider(Method method) throws SemverTestException {
         String filePath;
@@ -182,9 +263,6 @@ public class ClassComparatorTest {
                 filePath = ADVANCE_CLASS_TESTCASE;
                 break;
 
-            case "testClassMemberObjectTypeInclusion":
-                filePath = OBJECT_TYPE_INCLUSION_TESTCASE;
-                break;
 
             case "testClassMemberObjectFieldAnnotation":
                 filePath = OBJECT_FIELD_ANNOTATION_TESTCASE;
@@ -227,6 +305,49 @@ public class ClassComparatorTest {
                 filePath = METHOD_ANNOTATION_TESTCASE;
                 break;
 
+            case "testClassRemoteMethodDocumentation":
+                filePath = REMOTE_METHOD_DOCUMENTATION_TESTCASE;
+                break;
+            case "testClassRemoteMethodBody":
+                filePath = REMOTE_METHOD_BODY_TESTCASE;
+                break;
+            case "testClassRemoteMethodIdentifier":
+                filePath = REMOTE_METHOD_IDENTIFIER_TESTCASE;
+                break;
+            case "testClassRemoteMethodParameter":
+                filePath = REMOTE_METHOD_PARAMETER_TESTCASE;
+                break;
+            case "testClassRemoteMethodQualifier":
+                filePath = REMOTE_METHOD_QUALIFIER_TESTCASE;
+                break;
+            case "testClassRemoteMethodReturn":
+                filePath = REMOTE_METHOD_RETURN_TESTCASE;
+                break;
+            case "testClassRemoteMethodAnnotation":
+                filePath = REMOTE_METHOD_ANNOTATION_TESTCASE;
+                break;
+
+            case "testClassResourceMethodDocumentation":
+                filePath = RESOURCE_METHOD_DOCUMENTATION_TESTCASE;
+                break;
+            case "testClassResourceMethodBody":
+                filePath = RESOURCE_METHOD_BODY_TESTCASE;
+                break;
+            case "testClassResourceMethodIdentifier":
+                filePath = RESOURCE_METHOD_IDENTIFIER_TESTCASE;
+                break;
+            case "testClassResourceMethodParameter":
+                filePath = RESOURCE_METHOD_PARAMETER_TESTCASE;
+                break;
+            case "testClassResourceMethodQualifier":
+                filePath = RESOURCE_METHOD_QUALIFIER_TESTCASE;
+                break;
+            case "testClassResourceMethodReturn":
+                filePath = RESOURCE_METHOD_RETURN_TESTCASE;
+                break;
+            case "testClassResourceMethodAnnotation":
+                filePath = RESOURCE_METHOD_ANNOTATION_TESTCASE;
+                break;
             default:
                 filePath = null;
         }
