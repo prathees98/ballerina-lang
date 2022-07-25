@@ -16,7 +16,7 @@
  *  under the License.
  */
 
-package org.ballerinalang.test.readonly;
+package org.ballerinalang.test.security.readonly;
 
 import org.ballerinalang.test.BaseTest;
 import org.ballerinalang.test.context.BMainInstance;

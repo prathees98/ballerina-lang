@@ -24,6 +24,7 @@ import com.google.gson.JsonParser;
 import org.ballerinalang.semver.checker.exception.SemverTestException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import utilTest.DiffUtilTest;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -53,11 +54,13 @@ public class FunctionComparatorTest {
     @Test(dataProvider = "functionTestDataProvider")
     public void testFunctionAnnotation(JsonElement testData) throws Exception {
         executeTestData(testData);
+        DiffUtilTest.executeData(testData);
     }
 
     @Test(dataProvider = "functionTestDataProvider")
     public void testFunctionDocumentation(JsonElement testData) throws Exception {
         executeTestData(testData);
+        DiffUtilTest.executeData(testData);
     }
 
     @Test(dataProvider = "functionTestDataProvider")

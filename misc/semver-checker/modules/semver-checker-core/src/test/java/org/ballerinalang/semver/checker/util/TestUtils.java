@@ -74,8 +74,8 @@ public class TestUtils {
         PackageComparator packageComparator = new PackageComparator(currentPackage, oldPackage);
         Optional<PackageDiff> packageDiff = packageComparator.computeDiff();
         if (expectedOutput.equals(new JsonObject())) {
-           /* System.out.println(packageDiff.get().getAsString());
-            System.out.println(packageDiff.get().getAsJson());*/
+           System.out.println(packageDiff.get().getAsString());
+            System.out.println(packageDiff.get().getAsJson());
             // disabled test cases
         } else {
            /* System.out.println(packageDiff.get().getAsString());*/

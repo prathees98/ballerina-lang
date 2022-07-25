@@ -1,0 +1,8 @@
+[package]
+org = "prathees"
+name = "myPackage"
+version = "0.2.0"
+distribution = "2201.1.0"
+
+[build-options]
+observabilityIncluded = true

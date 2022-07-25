@@ -18,9 +18,39 @@
     "expectedOutput": {}
   },
   {
-    "description": "Change the order of the enum members",
-    "oldCode": "public enum color{\n\tRed,\n\tBlue\n}",
-    "newCode": "public enum color{\n\tBlue,\n\tRed\n}",
+    "description": " Remove Documentation",
+    "oldCode": "public enum color{\n\t#Documentation\n\tRed\n}\n",
+    "newCode": "public enum color{\n\tRed\n}\n",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Modify Documentation\n",
+    "oldCode": "public enum color{\n\t#Enum member\n\tRed\n}\n",
+    "newCode": "public enum color{\n\t#Documentation\n\tRed\n}\n",
+    "expectedOutput": {}
+  },
+  {
+    "description": " Add Documentation",
+    "oldCode": "public enum color{\n\tRed\n}\n",
+    "newCode": "public enum color{\n\t#Documentation\n\tRed\n}\n",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Modify Annotation\n",
+    "oldCode": "public enum color{\n\t@display{\n\tlabel:”label”\n}\n\n\tRed\n}\n",
+    "newCode": "public enum color{\n\t@display{\n\tlabel:””\n}\n\tRed\n}\n",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add Annotation",
+    "oldCode": "public enum color{\n\tRed\n}\n",
+    "newCode": "public enum color{\n\t@display{\n\tlabel:””\n}\n\tRed\n}\n",
+    "expectedOutput": {}
+  },
+  {
+    "description": " Remove Annotation",
+    "oldCode": "public enum color{\n\t@display{\n\tlabel:””\n}\n\n\tRed\n}\n",
+    "newCode": "public enum color{\n\tRed\n}\n",
     "expectedOutput": {}
   }
 ]
