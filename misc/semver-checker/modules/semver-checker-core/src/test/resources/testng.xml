@@ -33,6 +33,8 @@ under the License.
             <class name="org.ballerinalang.semver.checker.comparator.VariableComparatorTest"/>
             <class name="org.ballerinalang.semver.checker.comparator.ClassComparatorTest"/>
             <class name="org.ballerinalang.semver.checker.comparator.TypeComparatorTest"/>
+            <class name="org.ballerinalang.semver.checker.utilTest.UtilTest"/>
+
         </classes>
     </test>
 </suite>
