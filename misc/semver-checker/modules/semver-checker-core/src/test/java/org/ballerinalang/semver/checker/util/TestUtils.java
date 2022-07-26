@@ -74,6 +74,7 @@ public class TestUtils {
         if (expectedOutput.equals(new JsonObject())) {
             // disabled test cases
         } else {
+            System.out.println(packageDiff.get().getAsJson());
             packageDiff.ifPresent(diff -> Assert.assertEquals(diff.getAsJson(), expectedOutput));
         }
     }
