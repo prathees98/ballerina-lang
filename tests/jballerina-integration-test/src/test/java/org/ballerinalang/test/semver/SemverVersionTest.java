@@ -18,15 +18,23 @@
 
 package org.ballerinalang.test.semver;
 
+import io.ballerina.projects.internal.model.Central;
+import io.ballerina.projects.util.ProjectConstants;
 import org.ballerinalang.test.BaseTest;
 import org.ballerinalang.test.context.BMainInstance;
 import org.ballerinalang.test.context.BallerinaTestException;
 import org.ballerinalang.test.context.LogLeecher;
+import org.mockito.Mockito;
+import org.powermock.api.mockito.PowerMockito;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.wso2.ballerinalang.util.RepoUtils;
 
+import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import static io.ballerina.projects.util.ProjectConstants.CENTRAL_REPOSITORY_CACHE_NAME;
 
 /**
  * Tests usage for semver command
@@ -36,17 +44,31 @@ public class SemverVersionTest extends BaseTest {
     private static final String testFileLocation = Paths.get("src", "test", "resources", "semver")
             .toAbsolutePath().toString();
     private BMainInstance bMainInstance;
+    protected static Path homeCache;
 
     @BeforeClass
     public void setup() throws BallerinaTestException {
+        this.homeCache = Paths.get("build", "userHome");
+        /*this.homeCache = Path.of(Paths.get(testFileLocation, "foo1.1.0").toString());*/
         bMainInstance = new BMainInstance(balServer);
         // Build and push down stream packages.
-        compilePackageAndPushToLocal(Paths.get(testFileLocation, "foo0.1.0").toString(), "prathees-foo-any-0.1.0");
+        testPushWithCustomPath();
+        /*compilePackageAndPushToLocal(Paths.get(testFileLocation, "foo1.1.0").toString(), "prathees-foo-any-1.1.0");*/
     }
 
+    public static void testPushWithCustomPath()  {
+        Path centralRepoPath = homeCache.resolve(ProjectConstants.REPOSITORIES_DIR)
+                .resolve(CENTRAL_REPOSITORY_CACHE_NAME).resolve(ProjectConstants.BALA_DIR_NAME);
+        Path balaDestPath = centralRepoPath.resolve("prathees").resolve("foo").resolve("1.1.0").resolve("any");
+        Path mockRepo = homeCache;
+        PowerMockito.mockStatic(RepoUtils.class);
+        PowerMockito.when(RepoUtils.createAndGetHomeReposPath()).thenReturn(mockRepo);
+
+
+    }
     private void compilePackageAndPushToLocal(String packagePath, String balaFileName) throws BallerinaTestException {
-        LogLeecher buildLeecher = new LogLeecher("target/bala/" + balaFileName + ".bala");
-        LogLeecher pushLeecher = new LogLeecher("Successfully pushed target/bala/" + balaFileName + ".bala to " +
+        LogLeecher buildLeecher = new LogLeecher("target"+File.separator+ "bala"+File.separator + balaFileName + ".bala");
+        LogLeecher pushLeecher = new LogLeecher("Successfully pushed target"+File.separator+"bala"+File.separator + balaFileName + ".bala to " +
                 "'local' repository.");
         bMainInstance.runMain("pack", new String[]{}, null, null, new LogLeecher[]{buildLeecher},
                 packagePath);
@@ -59,7 +81,7 @@ public class SemverVersionTest extends BaseTest {
     @Test
     public void testUsageOfPackageVersion() throws BallerinaTestException {
 
-        Path path = Paths.get(testFileLocation, "foo0.2.0");
+        Path path = Paths.get(testFileLocation, "foo1.2.0");
         executeBalCommand("foo", path);
     }
 
@@ -70,12 +92,9 @@ public class SemverVersionTest extends BaseTest {
     }
 
     private void executeBalCommand(String packageName , Path path) throws BallerinaTestException {
-        String testsPassed = "Tests passed";
+        String testsPassed = "Suggested version";
         LogLeecher logLeecher = new LogLeecher(testsPassed);
-        bMainInstance.runMain(testFileLocation + "/", packageName, null, new String[]{}, null, null,
-                new LogLeecher[]{logLeecher});
-        logLeecher.waitForText(5000);
-        bMainInstance.runMain("semver", new String[]{"--repository=local"}, null, null, new LogLeecher[]{logLeecher},
+        bMainInstance.runMain("semver --1.1.0", new String[0], null, null, new LogLeecher[]{logLeecher},
                 path.toString());
         logLeecher.waitForText(5000);
     }

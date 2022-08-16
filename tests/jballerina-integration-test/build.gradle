@@ -40,8 +40,20 @@ configurations {
         transitive false
     }
 }
-
+repositories{
+    jcenter()
+}
 dependencies {
+   /* // https://mvnrepository.com/artifact/org.powermock/powermock-api-mockito
+    testImplementation group: 'org.powermock', name: 'powermock-api-mockito', version: '1.7.4'
+    testImplementation('junit:junit:4.13.2')
+    testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3'
+    testCompile group: 'junit', name: 'junit-dep', version: '4.10'
+    testCompile group: 'org.hamcrest', name: 'hamcrest-library', version: '1.3'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '1.9.+'*/
+    testCompile 'org.mockito:mockito-all'
+    testImplementation 'org.powermock:powermock-mockito-release-full'
+    testImplementation 'org.powermock:powermock-module-testng-common'
     implementation 'org.ballerinalang:ballerina-lang:0.992.0-m2-SNAPSHOT'
     implementation project(':ballerina-lang')
     implementation project(':ballerina-lang:annotations')
