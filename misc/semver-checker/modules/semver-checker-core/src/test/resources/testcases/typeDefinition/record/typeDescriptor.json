@@ -1,0 +1,56 @@
+[
+  {
+    "description": "Add a new field in module type definition",
+    "oldCode": "public type Person record {\n\tstring name;\n\tint age;\n};",
+    "newCode": "public type Person record {\n\tstring name;\n\tint age;\n\tString id;\n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change a field type in module type definition",
+    "oldCode": "public type Person record {\n\tstring name;\n\tint age;\nint id;\n};",
+    "newCode": "public type Person record {\n\tstring name;\n\tint age;\n\tString id;\n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove a field from module type definition",
+    "oldCode": "public type Person record {\n\tstring name;\n\tint age;\nint id;\n};",
+    "newCode": "public type Person record {\n\tstring name;\n\tint age;\n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change the order of the field in module type definition",
+    "oldCode": "public type Person record {\n\tstring name;\n\tint age;\n};",
+    "newCode": "public type Person record {\n\tint age;\n\tString name;\n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Change anydata type to a specific type in module type definition",
+    "oldCode": "public type Person record {\n\tstring name;\n\tint age;\nanydata id;\n};",
+    "newCode": "public type Person record {\n\tstring name;\n\tint age;\n\tint id; \n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add default value for a record field",
+    "oldCode": "public type Person record {\n\tstring name;};",
+    "newCode": "public type Person record {\n\tstring name = \"hello\";};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove default value from a record field",
+    "oldCode": "public type Person record {\n\tstring name = \"hello\";};",
+    "newCode": "public type Person record {\n\tstring name;};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Modify default value from a record field",
+    "oldCode": "public type Person record {\n\tstring name = \"hello\";};",
+    "newCode": "public type Person record {\n\tstring name = \"hi\";};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Type inclusion of record",
+    "oldCode": "public type Coord record{\n\tint x;\n\tint y;\n};\ntype One record{\n\tint x;\n\tint y;\n\tint z;\n};",
+    "newCode": "public type Coord record{\n\tint x;\n\tint y;\n};\ntype One record{\n\t*Coord;\n\tint z;\n};",
+    "expectedOutput": {}
+  }
+]

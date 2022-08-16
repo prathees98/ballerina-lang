@@ -162,6 +162,7 @@
             <class name="org.ballerinalang.test.types.TypeUnificationTest"/>
 
             <class name="org.ballerinalang.test.ParserTestRunner"/>
+            <class name="org.ballerinalang.test.semver.SemverTest"></class>
         </classes>
     </test>
 </suite>

@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Add a type definition ",
+    "oldCode": "",
+    "newCode": "public type MapArray map<string>[];",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove a type definition",
+    "oldCode": "public type MapArray map<string>[];",
+    "newCode": "",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Rename a type definition",
+    "oldCode": "public type MapArray map<string>[];",
+    "newCode": "public type Array map<string>[];",
+    "expectedOutput": {}
+  }
+]

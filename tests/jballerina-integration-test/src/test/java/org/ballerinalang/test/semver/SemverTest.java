@@ -1,9 +1,9 @@
-package org.ballerinalang.semver.checker.utilTest;
+package org.ballerinalang.test.semver;
+
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import org.ballerinalang.semver.checker.exception.SemverTestException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -13,21 +13,27 @@ import java.lang.reflect.Method;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.ballerinalang.semver.checker.util.TestUtils.executeTestData;
-import static org.ballerinalang.semver.checker.utilTest.SemverCheckerTest.executeData;
+import static org.ballerinalang.test.semver.SemverUtilTest.executeTestData;
 
-public class UtilTest {
-    private static final String TEST_DATA_ROOT = "src/test/resources/testcases/utilTest/";
-    private static final String SEMVER_TESTCASE = TEST_DATA_ROOT + "semverTest.json";
+/**
+ * Function definition comparator related test cases.
+ *
+ * @since 2201.2.0
+ */
+public class SemverTest {
 
-    @Test(dataProvider = "semverTestDataProvider")
+    private static final String TEST_DATA_ROOT = "src/test/resources/test-src/semver/";
+    private static final String SEMVER_TESTCASE = TEST_DATA_ROOT + "basic.json";
+
+
+    @Test(dataProvider = "TestDataProvider")
     public void testSemver(JsonElement testData) throws Exception {
-        executeData(testData);
+        executeTestData(testData);
     }
 
-    @DataProvider(name = "semverTestDataProvider")
-    public Object[] semverTestDataProvider(Method method) throws SemverTestException {
 
+    @DataProvider(name = "TestDataProvider")
+    public Object[] semverTestDataProvider(Method method) throws IOException {
         String filePath;
         switch (method.getName()) {
             case "testSemver":
@@ -37,9 +43,6 @@ public class UtilTest {
                 filePath = null;
         }
 
-        if (filePath == null) {
-            throw new SemverTestException("Failed to load dataset for method: " + method.getName());
-        }
         try (FileReader reader = new FileReader(filePath)) {
             Object testCaseObject = JsonParser.parseReader(reader);
             JsonArray fileData = (JsonArray) testCaseObject;
@@ -47,7 +50,7 @@ public class UtilTest {
             fileData.forEach(elementList::add);
             return elementList.toArray();
         } catch (IOException e) {
-            throw new SemverTestException("failed to load test data");
+            throw e;
         }
     }
 }

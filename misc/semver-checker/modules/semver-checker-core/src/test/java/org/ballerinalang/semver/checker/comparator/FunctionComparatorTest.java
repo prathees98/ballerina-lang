@@ -24,7 +24,6 @@ import com.google.gson.JsonParser;
 import org.ballerinalang.semver.checker.exception.SemverTestException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Method;

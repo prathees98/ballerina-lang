@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Add documentation",
+    "oldCode": "public type Person object {\nstring name;\n};",
+    "newCode": "#documentation\npublic type Person object {\nstring name;\n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove documentation",
+    "oldCode": "#documentation\npublic type Person object {\nstring name;\n};",
+    "newCode": "public type Person object {\nstring name;\n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Modify documentation",
+    "oldCode": "#documentation\npublic type Person object {\nstring name;\n};",
+    "newCode": "#type object\npublic type Person object {\nstring name;\n};",
+    "expectedOutput": {}
+  }
+]

@@ -215,9 +215,9 @@
     <test name="ballerina-readonly-intersection-tests" parallel="false">
         <parameter name="enableJBallerinaTests" value="true"/>
         <classes>
-            <class name="org.ballerinalang.test.readonly.ReadOnlyIntersectionViaMultipleModulesTest"/>
-            <class name="org.ballerinalang.test.readonly.ReadOnlyIntersectionViaMultipleModulesTest2"/>
-            <class name="org.ballerinalang.test.readonly.ReadOnlyIntersectionViaMultipleModulesTest3"/>
+            <class name="org.ballerinalang.test.security.readonly.ReadOnlyIntersectionViaMultipleModulesTest"/>
+            <class name="org.ballerinalang.test.security.readonly.ReadOnlyIntersectionViaMultipleModulesTest2"/>
+            <class name="org.ballerinalang.test.security.readonly.ReadOnlyIntersectionViaMultipleModulesTest3"/>
         </classes>
     </test>
 

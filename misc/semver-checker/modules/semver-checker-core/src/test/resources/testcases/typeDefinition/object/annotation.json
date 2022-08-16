@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Add annotation",
+    "oldCode": "public type Person object {\nstring name;\n};",
+    "newCode": "@tainted\npublic type Person object {\nstring name;\n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove annotation",
+    "oldCode": "@tainted\npublic type Person object {\nstring name;\n};",
+    "newCode": "public type Person object {\nstring name;\n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Modify annotation",
+    "oldCode": "@tainted\npublic type Person object {\nstring name;\n};",
+    "newCode": "@deprecated\npublic type Person object {\nstring name;\n};",
+    "expectedOutput": {}
+  }
+]

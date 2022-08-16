@@ -1,0 +1,14 @@
+[
+  {
+    "description": "Add public qualifier",
+    "oldCode": "type Person object {\nstring name;\n};",
+    "newCode": "public type Person object {\nstring name;\n};",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Remove public qualifier",
+    "oldCode": "public type Person object {\nstring name;\n};",
+    "newCode": "type Person object {\nstring name;\n};",
+    "expectedOutput": {}
+  }
+]

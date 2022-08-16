@@ -1,0 +1,14 @@
+[
+  {
+    "description": "Remove the public keyword from a type definition",
+    "oldCode": "public public type Age record{\nint x;\nint y;\n };",
+    "newCode": "public type Age record{\nint x;\nint y;\n };",
+    "expectedOutput": {}
+  },
+  {
+    "description": "Add public key word to a type definition",
+    "oldCode": "public type Age record{\nint x;\nint y;\n };",
+    "newCode": "public public type Age record{\nint x;\nint y;\n };",
+    "expectedOutput": {}
+  }
+]
